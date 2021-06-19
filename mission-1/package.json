@@ -1,0 +1,15 @@
+{
+  "name": "mission-1",
+  "version": "1.0.0",
+  "description": "Mission 1 introduces users to userscripts or gadgets and how to write them.",
+  "main": "MediaWiki:Guidedtour-tour-tut1.js",
+  "scripts": {
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
+  },
+  "author": "Devyansh Chawla",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-wikimedia": "^0.20.0"
+  }
+}
