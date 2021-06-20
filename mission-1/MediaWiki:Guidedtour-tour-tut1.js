@@ -6,7 +6,7 @@
 		} ),
 		postEditButtons = [];
 
-	function showAlert() {
+	function showAlert( title, message ) {
 		var messageDialog = new OO.ui.MessageDialog(),
 			windowManager = new OO.ui.WindowManager();
 
@@ -17,8 +17,8 @@
 		windowManager.addWindows( [ messageDialog ] );
 
 		windowManager.openWindow( messageDialog, {
-			title: 'Please login',
-			message: 'Please login to continue on the tour.',
+			title: title,
+			message: message,
 			actions: [ {
 				action: 'accept',
 				label: 'OK',
@@ -44,7 +44,12 @@
 				result = result.query;
 				var csrfToken = result.tokens.csrftoken,
 					page = result.pages[ result.pageids[ 0 ] ],
-					text = page.revisions[ 0 ][ 'slots' ][ 'main' ][ '*' ];
+					text = page.revisions !== undefined ? page.revisions[ 0 ].slots.main[ '*' ] : 'Page unavailable';
+
+				if ( text === 'Page unavailable' ) {
+					window.location.href = linkTo;
+					return;
+				}
 
 				api
 					.post( {
@@ -57,6 +62,9 @@
 					.done( function () {
 						window.location.href = linkTo;
 					} );
+			} )
+			.fail( function () {
+				showAlert( 'Error', 'An error occured. Please try again.' );
 			} );
 	}
 
@@ -185,7 +193,7 @@
 				type: 'neutral',
 				onclick: function () {
 					if ( mw.config.get( 'wgUserName' ) === null ) {
-						showAlert();
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
 						return;
 					}
 					window.location.href = mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=7';
@@ -218,7 +226,7 @@
 				name: 'Say hello to your common.js*',
 				onclick: function () {
 					if ( !mw.config.get( 'wgUserName' ) ) {
-						showAlert();
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
 						return;
 					}
 					sendMessage(
@@ -378,7 +386,7 @@
 				name: 'Thanks*',
 				onclick: function () {
 					if ( !mw.config.get( 'wgUserName' ) ) {
-						showAlert();
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
 						return;
 					}
 					sendMessage(
