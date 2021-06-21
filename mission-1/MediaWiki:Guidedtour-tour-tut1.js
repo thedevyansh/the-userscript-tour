@@ -1,15 +1,28 @@
+// The Userscript Tour: Mission 1 (Let's begin the journey)
 ( function ( window, document, $, mw, gt ) {
 
+	// Defined the guided tour.
 	var tour = new gt.TourBuilder( {
 			name: 'tut1',
 			shouldLog: true
 		} ),
 		postEditButtons = [];
 
+	/**
+	 * Show the message dialog box.
+	 *
+	 * It displays a message dialog box (alert box) with relevant message if the user
+	 * is not logged-in or request to the Action API for sending yourself messages fails.
+	 *
+	 * @param {string} title Represents the title of the error.
+	 * @param {string} message Represents the description of the error.
+	 */
 	function showAlert( title, message ) {
 		var messageDialog = new OO.ui.MessageDialog(),
 			windowManager = new OO.ui.WindowManager();
 
+		// Sets the z-index of the message dialog box to be greater than that of the 'guider'
+		// so that the dialog box appears on top of everything.
 		messageDialog.$element.css( { zIndex: '100000010' } );
 
 		$( 'body' ).append( windowManager.$element );
@@ -27,9 +40,24 @@
 		} );
 	}
 
+	/**
+	 * Sends the message to the personal wiki page.
+	 *
+	 * It sends the message to the user's wiki page with API:Edit. For example, Welcome to the Tour,
+	 * Badge earned, etc.
+	 *
+	 * @param {string} targetPage Represents the location of the personal wiki page to send
+	 * the message to.
+	 * @param {string} msgPage Represents the location of the wiki page containing the message
+	 * to be sent.
+	 * @param {string} linkTo Represents the location of the wiki page to direct the user to,
+	 * after the message has been sent.
+	 */
 	function sendMessage( targetPage, msgPage, linkTo ) {
 		var api = new mw.Api();
 
+		// Sends a GET request to the wiki page containing the message. The response contains the
+		// message and the edit token if the Promise is resolved.
 		api
 			.get( {
 				action: 'query',
@@ -44,13 +72,19 @@
 				result = result.query;
 				var csrfToken = result.tokens.csrftoken,
 					page = result.pages[ result.pageids[ 0 ] ],
-					text = page.revisions !== undefined ? page.revisions[ 0 ].slots.main[ '*' ] : 'Page unavailable';
+					// Checks whether the wiki page containing the message exists or not.
+					text = page.revisions !== undefined ?
+						page.revisions[ 0 ].slots.main[ '*' ] :
+						'Page unavailable';
 
+				// If the page containing the message doesn't exist, simply direct the user
+				// to the specified location.
 				if ( text === 'Page unavailable' ) {
 					window.location.href = linkTo;
 					return;
 				}
 
+				// Sends the extracted message to the personal wiki page.
 				api
 					.post( {
 						action: 'edit',
@@ -63,13 +97,17 @@
 						window.location.href = linkTo;
 					} );
 			} )
+			// Should the GET request fail, a message dialog box is displayed to the user.
 			.fail( function () {
 				showAlert( 'Error', 'An error occured. Please try again.' );
 			} );
 	}
 
+	// Loads the OOUI dependencies required to display the message dialog box.
 	mw.loader.load( [ 'oojs-ui-core', 'oojs-ui-windows' ] );
 
+	// Gracefully handles the situation when the user saves a file without editing it.
+	// Asks the user to go back and make an edit.
 	if ( mw.config.get( 'wgAction' ) === 'view' && !gt.isPostEdit() ) {
 		postEditButtons.push( {
 			name: 'Click here to go back and make an edit',
@@ -79,6 +117,7 @@
 		} );
 	}
 
+	// Step 1
 	tour
 		.firstStep( {
 			name: '1',
@@ -95,6 +134,7 @@
 		} )
 		.next( '2' );
 
+	// Step 2
 	tour
 		.step( {
 			name: '2',
@@ -115,13 +155,14 @@
 		} )
 		.next( '3' );
 
+	// Step 3
 	tour
 		.step( {
 			name: '3',
 			title: 'What is a user script?',
 			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>A user script is a public JavaScript program that immediately changes the behavior of the software for a logged-in user. This program can be shared with other users and is located on wiki pages.<br><br>It provides a <b>personalized user experience of the MediaWiki software.</b> We can write user scripts either from scratch or by modifying an existing user script.<br><br>',
 			onShow: gt.parseDescription,
-			overlay: false,
+			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
@@ -135,13 +176,14 @@
 		} )
 		.next( '4' );
 
+	// Step 4
 	tour
 		.step( {
 			name: '4',
 			title: 'Gadgets',
 			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i> Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>That means once you write a user script, it can potentially be converted into a gadget by contacting an interface administrator.<br><br>',
 			onShow: gt.parseDescription,
-			overlay: false,
+			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
@@ -155,13 +197,14 @@
 		} )
 		.next( '5' );
 
+	// Step 5
 	tour
 		.step( {
 			name: '5',
 			title: 'Please welcome common.js!',
 			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>A user script comes to life after being written or loaded on <b>common.js.</b><br><br> Confused a bit? Not to worry. We’ll get to it soon.<br><br><br><b>A word of caution</b><br>User scripts enable a user account to do powerful things that it otherwise couldn’t. You are fully responsible for whatever the user script does on your behalf.<br><br>',
 			onShow: gt.parseDescription,
-			overlay: false,
+			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
@@ -175,6 +218,7 @@
 		} )
 		.next( '6' );
 
+	// Step 6
 	tour
 		.step( {
 			name: '6',
@@ -210,6 +254,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 7
 	tour
 		.step( {
 			name: '7',
@@ -239,6 +284,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 8
 	tour
 		.step( {
 			name: '8',
@@ -259,6 +305,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 9
 	tour
 		.step( {
 			name: '9',
@@ -281,6 +328,7 @@
 		} )
 		.next( '10' );
 
+	// Step 10
 	tour
 		.step( {
 			name: '10',
@@ -301,6 +349,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 11
 	tour
 		.step( {
 			name: '11',
@@ -324,11 +373,12 @@
 			}
 		} );
 
+	// Step 12
 	tour
 		.step( {
 			name: '12',
 			title: "Let's load the user script",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other. We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Type <b>mw.loader.load(<i>script_location</i>&action=raw&ctype=text/javascript)</b>.<br><br>DON\'T FORGET to replace <b>script_location</b> with the script location you copied.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other. We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Type<br><b>mw.loader.load(\'<i>script_location</i>&action=raw&ctype=text/javascript\');</b><br><br>DON\'T FORGET to replace <b>script_location</b> with the script location you copied.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.editOptions',
 			position: 'bottomRight',
@@ -346,6 +396,7 @@
 		} )
 		.next( '13' );
 
+	// Step 13
 	tour
 		.step( {
 			name: '13',
@@ -356,12 +407,14 @@
 			position: 'bottomRight',
 			overlay: false,
 			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=12&action=edit'
-			} ],
-			buttons: postEditButtons,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=12&action=edit'
+					} ] :
+					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
@@ -370,6 +423,7 @@
 			}
 		} );
 
+	// Step 14
 	tour
 		.step( {
 			name: '14',
@@ -404,6 +458,7 @@
 			}
 		} );
 
+	// Step 15
 	tour
 		.step( {
 			name: '15',
@@ -424,6 +479,7 @@
 		} )
 		.next( '16' );
 
+	// Step 16
 	tour
 		.step( {
 			name: '16',
@@ -435,7 +491,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage' ) + '?tour=tut1&step=15'
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=15'
 			}, {
 				name: 'So far so good',
 				action: 'next'
@@ -444,6 +500,7 @@
 		} )
 		.next( '17' );
 
+	// Step 17
 	tour
 		.step( {
 			name: '17',
@@ -464,6 +521,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 18
 	tour
 		.step( {
 			name: '18',
@@ -487,6 +545,7 @@
 			}
 		} );
 
+	// Step 19
 	tour
 		.step( {
 			name: '19',
@@ -509,6 +568,7 @@
 		} )
 		.next( '20' );
 
+	// Step 20
 	tour
 		.step( {
 			name: '20',
@@ -519,12 +579,14 @@
 			position: 'bottomRight',
 			overlay: false,
 			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=19&action=edit'
-			} ],
-			buttons: postEditButtons,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=19&action=edit'
+					} ] :
+					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
@@ -533,6 +595,7 @@
 			}
 		} );
 
+	// Step 21
 	tour
 		.step( {
 			name: '21',
@@ -553,6 +616,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 22
 	tour
 		.step( {
 			name: '22',
@@ -576,11 +640,12 @@
 			}
 		} );
 
+	// Step 23
 	tour
 		.step( {
 			name: '23',
 			title: 'Load the user script',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><code>mw.loader.load()</code> is your friend. Type <b>mw.loader.load(<i>script_location</i>&action=raw&ctype=text/javascript)</b>.<br><br>DON\'T FORGET to replace <b>script_location</b> with the script location you copied.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><code>mw.loader.load()</code> is your friend. Type <b>mw.loader.load(\'<i>script_location</i>&action=raw&ctype=text/javascript\');</b><br><br>DON\'T FORGET to replace <b>script_location</b> with the script location you copied.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.editOptions',
 			position: 'bottomRight',
@@ -598,6 +663,7 @@
 		} )
 		.next( '24' );
 
+	// Step 24
 	tour
 		.step( {
 			name: '24',
@@ -608,12 +674,14 @@
 			position: 'bottomRight',
 			overlay: false,
 			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=23&action=edit'
-			} ],
-			buttons: postEditButtons,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=23&action=edit'
+					} ] :
+					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
@@ -622,6 +690,7 @@
 			}
 		} );
 
+	// Step 25
 	tour
 		.step( {
 			name: '25',
@@ -642,6 +711,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 26
 	tour.step( {
 		name: '26',
 		title: 'Mission 1 complete!',
