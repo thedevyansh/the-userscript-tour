@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // The Userscript Tour: Mission 1 (Let's begin the journey)
 ( function ( window, document, $, mw, gt ) {
 
@@ -310,7 +311,7 @@
 		.step( {
 			name: '9',
 			title: 'Sneak Peek!',
-			description: 'Have a look at the following user script and COPY ITS LOCATION.',
+			description: 'Have a look at the user script shown below.',
 			onShow: gt.parseDescription,
 			attachTo: '#contentSub',
 			position: 'bottom',
@@ -333,7 +334,7 @@
 		.step( {
 			name: '10',
 			title: "What's going on here?",
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Don\'t worry if you didn\'t understand every bit of information in this user script. For the time being, our main focus is to learn how to make the script come into effect.<br><br>Here\'s the script location in case you haven\'t copied:<br><br><small><b><nowiki>http://localhost:8080/w/index.php?title=MediaWiki:Zoom_Toggle.js</nowiki></b></small>',
+			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Don\'t burn out!<br>We know you didn\'t understand everything present in this user script. You\'d feel better once we get you familiar with <b>ResourceLoader</b> and <b>Action API.</b><br><br>Till then, our main focus is to learn to make the script come into effect.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -342,7 +343,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
 			}, {
-				name: 'Copied',
+				name: 'That feels better',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=11'
 			} ],
@@ -378,7 +379,7 @@
 		.step( {
 			name: '12',
 			title: "Let's load the user script",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other. We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Type<br><b>mw.loader.load(\'<i>script_location</i>&action=raw&ctype=text/javascript\');</b><br><br>DON\'T FORGET to replace <b>script_location</b> with the script location you copied.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br><br>Type:<br><b>mw.loader.load</b>(\'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.editOptions',
 			position: 'bottomRight',
@@ -463,7 +464,7 @@
 		.step( {
 			name: '15',
 			title: 'Play around',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>You could now see three magnifying glasses on top right. Play around with them.<br><br>In case you don’t see the icons, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br><br>When done, we’ll load another user script because it’s fun :)<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>You could now see an <b>Invert link</b> on the top toolbar! Play around with it.<br><br>In case you don’t see the link, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br><br>When done, we’ll play with another user script :)<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -484,7 +485,7 @@
 		.step( {
 			name: '16',
 			title: 'Invert',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>Our next user script allows us to invert the page color and the color of images on the current page.<br><br><br>COPY THE ENTIRE CODE from the script location:<br><small><b><nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js</nowiki></b></small><br><br><br>Again, don\'t bother much if you can\'t understand every bit of it!<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Our next user script allows us to invert the page color and the color of images on the current page.<br><br><br>COPY THE ENTIRE CODE from the script location:<br><small><b><nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js</nowiki></b></small><br><br><br>Again, don\'t bother much if you can\'t understand every bit of it!<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -505,14 +506,14 @@
 		.step( {
 			name: '17',
 			title: 'Your user subpage',
-			description: '<br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace on <b>MediaWiki.org</b> to PASTE the user script.<br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/invert.js ?</b><br><br>',
+			description: '<br><br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace to write the user script.<br><br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/invert.js ?</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage' ) + '?tour=tut1&step=16'
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=16'
 			}, {
 				name: 'Seems good',
 				action: 'externalLink',
@@ -535,7 +536,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage' ) + '?tour=tut1&step=17'
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=17'
 			} ],
 			allowAutomaticOkay: false
 		} )
