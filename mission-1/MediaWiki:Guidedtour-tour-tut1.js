@@ -123,7 +123,7 @@
 		.firstStep( {
 			name: '1',
 			title: 'Welcome to The Userscript Tour',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>We\'re so thrilled to have you! There\'s a ton of things to know about <b>user scripts</b>.<br><br>Don\'t worry, the learnings would be facilitated using interactive missions, each designed to help you get well-versed with the various aspects of user scripts.<br><br>The missions are constructed such that each one of them builds on its preceding missions in one or the other way.<br><br><b>Let\'s have some fun :)</b><br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>We\'re so thrilled to have you! There\'s a ton of things to know about <b>user scripts</b>.<br><br>Don\'t worry, the learnings would be facilitated using interactive missions, each designed to help you get well-versed with the various aspects of user scripts.<br><br>The missions are constructed such that each one of them builds on its preceding missions in one or the other way.<br><br><b>Let\'s have some fun :)</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -161,7 +161,7 @@
 		.step( {
 			name: '3',
 			title: 'What is a user script?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>A user script is a public JavaScript program that immediately changes the behavior of the software for a logged-in user. This program can be shared with other users and is located on wiki pages.<br><br>It provides a <b>personalized user experience of the MediaWiki software.</b> We can write user scripts either from scratch or by modifying an existing user script.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A user script is a public JavaScript program that immediately changes the behavior of the software for a logged-in user. This program can be shared with other users and is located on wiki pages.<br><br>It provides a <b>personalized user experience of the MediaWiki software.</b> We can write user scripts either from scratch or by modifying an existing user script.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -182,7 +182,7 @@
 		.step( {
 			name: '4',
 			title: 'Gadgets',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i> Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>That means once you write a user script, it can potentially be converted into a gadget by contacting an interface administrator.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i> Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>That means once you write a user script, it can potentially be converted into a gadget by contacting an interface administrator.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -203,7 +203,7 @@
 		.step( {
 			name: '5',
 			title: 'Please welcome common.js!',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>A user script comes to life after being written or loaded on <b>common.js.</b><br><br> Confused a bit? Not to worry. We’ll get to it soon.<br><br><br><b>A word of caution</b><br>User scripts enable a user account to do powerful things that it otherwise couldn’t. You are fully responsible for whatever the user script does on your behalf.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>A user script comes to life after being written or loaded on <b>common.js.</b><br><br> Confused a bit? Not to worry. We’ll get to it soon.<br><br><br><b>A word of caution</b><br>User scripts enable a user account to do powerful things that it otherwise couldn’t. You are fully responsible for whatever the user script does on your behalf.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -224,7 +224,7 @@
 		.step( {
 			name: '6',
 			title: 'Login or create an account',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Working with user scripts or gadgets requires you to login first.  Go for it.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Working with user scripts or gadgets requires you to login first.  Go for it.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -234,7 +234,6 @@
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=5'
 			}, {
 				name: "I'm logged in",
-				action: 'okay',
 				type: 'neutral',
 				onclick: function () {
 					if ( mw.config.get( 'wgUserName' ) === null ) {
@@ -244,13 +243,13 @@
 					window.location.href = mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=7';
 				}
 			}, {
-				name: 'Register!',
-				action: 'externalLink',
-				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=MediaWiki:TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7%26showGettingStarted%3Dfalse&type=signup'
-			}, {
 				name: 'I need to login',
 				action: 'externalLink',
 				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=MediaWiki:TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7'
+			}, {
+				name: 'Register!',
+				action: 'externalLink',
+				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=MediaWiki:TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7%26showGettingStarted%3Dfalse&type=signup'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -260,7 +259,7 @@
 		.step( {
 			name: '7',
 			title: "What's this common.js?",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>It’s <b>your personal JavaScript file,</b> located at User:' + mw.config.get( 'wgUserName' ) + '/common.js.<br><br>This file influences the interface and layout of a wiki for yourself only. It’s loaded regardless of which skin you are using.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>It’s <b>your personal JavaScript file,</b> located at User:' + mw.config.get( 'wgUserName' ) + '/common.js.<br><br>This file influences the interface and layout of a wiki for yourself only. It’s loaded regardless of which skin you are using.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -290,7 +289,7 @@
 		.step( {
 			name: '8',
 			title: 'Your common.js',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>This is one of your special files. So now you know the place where you write or load your user scripts. <b>Although public, only you can edit it.</b><br><br>How about loading your very first user script?<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>This is one of your special files. So now you know the place where you write or load your user scripts. <b>Although public, only you can edit it.</b><br><br>How about loading your very first user script?<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -334,7 +333,7 @@
 		.step( {
 			name: '10',
 			title: "What's going on here?",
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Don\'t burn out!<br>We know you didn\'t understand everything present in this user script. You\'d feel better once we get you familiar with <b>ResourceLoader</b> and <b>Action API.</b><br><br>Till then, our main focus is to learn to make the script come into effect.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Don\'t burn out!<br>We know you didn\'t understand everything present in this user script. You\'d feel better once we get you familiar with <b>ResourceLoader</b> and <b>Action API.</b><br><br>Till then, our main focus is to learn to make the script come into effect.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -379,7 +378,7 @@
 		.step( {
 			name: '12',
 			title: "Let's load the user script",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br><br>Type:<br><b>mw.loader.load</b>(\'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br><br>Type:<br><b>mw.loader.load</b>(\'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -464,7 +463,7 @@
 		.step( {
 			name: '15',
 			title: 'Play around',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>You could now see an <b>Invert link</b> on the top toolbar! Play around with it.<br><br>In case you don’t see the link, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br><br>When done, we’ll play with another user script :)<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>You could now see an <b>Invert link</b> on the top toolbar! Play around with it.<br><br>In case you don’t see the link, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br><br>When done, we’ll play with another user script :)<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -538,7 +537,7 @@
 		.step( {
 			name: '18',
 			title: 'The Rationale',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> <b>useCustom</b> is defined to check whether the font size is default or custom and to determine which toggle button image to use.<br><b>2.</b> The next three variables define the magnifying glass icons to be displayed on the right of the article title.<br><b>3.</b> The DOM elements are created and grabbed using CSS selectors via jQuery.<br><b>4.</b> Later, <b>updateSize(), toggle(), and zoom()</b> are defined to handle the click events on the zoom-in, zoom-out, and toggle buttons.<br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> <b>useCustom</b> is defined to check whether the font size is default or custom and to determine which toggle button image to use.<br><b>2.</b> The next three variables define the magnifying glass icons to be displayed on the right of the article title.<br><b>3.</b> The DOM elements are created and grabbed using CSS selectors via jQuery.<br><b>4.</b> Later, <b>updateSize(), toggle(), and zoom()</b> are defined to handle the click events on the zoom-in, zoom-out, and toggle buttons.<br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -559,7 +558,7 @@
 		.step( {
 			name: '19',
 			title: 'What\'s next?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|120px|link=]]</div><br>Do you think our task is over?<br>We haven\'t yet LOADED the user script in our common.js. So, let\'s head back to our common.js.<br><br><br><b>P.S.</b>If you recall, we loaded our first script using a similar argument. That\'s how you create user scripts in your user subpage and share them with the community.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Do you think our task is over?<br>We haven\'t yet LOADED the user script in our common.js. So, let\'s head back to our common.js.<br><br><br><b>P.S.</b>If you recall, we loaded our first script using a similar argument. That\'s how you create user scripts in your user subpage and share them with the community.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -604,7 +603,7 @@
 		.step( {
 			name: '21',
 			title: 'Load the user script',
-			description: '<br><div align="left">[[File:TUT rocket.png|120px|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Type<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Type<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
