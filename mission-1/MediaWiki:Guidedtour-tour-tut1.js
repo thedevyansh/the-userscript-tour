@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // The Userscript Tour: Mission 1 (Let's begin the journey)
 ( function ( window, document, $, mw, gt ) {
 
@@ -182,7 +181,7 @@
 		.step( {
 			name: '4',
 			title: 'Gadgets',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i> Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>That means once you write a user script, it can potentially be converted into a gadget by contacting an interface administrator.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i><br>Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
