@@ -669,18 +669,19 @@
 		} );
 
 	// Step 24
-	tour.step( {
-		name: '24',
-		title: 'Mission 1 complete!',
-		description: '<br>This concludes <b>Mission 1:</b> Let\'s get started.<br><br>You\'re all set for your journey on <b>Mission 2:</b> Developing with ResourceLoader<br><br>',
-		onShow: gt.parseDescription,
-		overlay: true,
-		closeOnClickOutside: false,
-		buttons: [ {
-			name: 'Congrats me!',
-			action: 'end'
-		} ],
-		allowAutomaticOkay: false
-	} );
+	tour
+		.step( {
+			name: '24',
+			title: 'Mission 1 complete!',
+			description: '<br>This concludes <b>Mission 1:</b> Let\'s get started.<br><br>You\'re all set for your journey on <b>Mission 2:</b> Developing with ResourceLoader<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Congrats me!',
+				action: 'end'
+			} ],
+			allowAutomaticOkay: false
+		} );
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
