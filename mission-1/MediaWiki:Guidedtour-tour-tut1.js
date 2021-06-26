@@ -95,6 +95,10 @@
 					} )
 					.done( function () {
 						window.location.href = linkTo;
+					} )
+					// Should the GET request fail, a message dialog box is displayed to the user.
+					.fail( function () {
+						showAlert( 'Error', 'An error occured. Please try again.' );
 					} );
 			} )
 			// Should the GET request fail, a message dialog box is displayed to the user.
@@ -483,7 +487,7 @@
 		.step( {
 			name: '16',
 			title: 'Your user subpage',
-			description: '<br><br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace to write the user script.<br><br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/invert.js ?</b><br><br>',
+			description: '<br><br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace to write the user script.<br><br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/Zoom_and_Toggle.js ?</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -499,9 +503,9 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ) + '/invert.js',
+						'User:' + mw.config.get( 'wgUserName' ) + '/Zoom_and_Toggle.js',
 						'MediaWiki:Zoom_Toggle.js',
-						mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=17'
+						mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=17'
 					);
 				}
 			} ],
@@ -543,7 +547,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=17'
+				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=17'
 			}, {
 				name: 'Sure',
 				action: 'next'
@@ -564,7 +568,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=18'
+				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=18'
 			}, {
 				name: 'We are approaching the final steps',
 				action: 'externalLink',
@@ -587,7 +591,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/invert.js' ) + '?tour=tut1&step=19'
+				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=19'
 			} ],
 			allowAutomaticOkay: false
 		} )
