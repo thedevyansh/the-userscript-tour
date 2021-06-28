@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 ( function ( window, document, $, mw, gt ) {
 
 	var tour = new gt.TourBuilder( {
@@ -26,7 +27,6 @@
 			} ]
 		} );
 	}
-
 
 	function sendMessage( targetPage, msgPage, linkTo ) {
 		var api = new mw.Api();
@@ -161,7 +161,7 @@
 		} )
 		.next( '5' );
 
-		tour
+	tour
 		.step( {
 			name: '5',
 			title: 'Module',
