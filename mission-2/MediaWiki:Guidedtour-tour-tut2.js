@@ -174,11 +174,31 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=4'
 			}, {
-				name: 'Cool',
+				name: 'How are the modules loaded?',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
 		.next( '6' );
+
+	tour
+		.step( {
+			name: '6',
+			title: 'Thanks to the RL Client :)',
+			description: '<br>The <b>ResourceLoader Client</b> is in charge of loading and executing modules from the server.<br><br>All modules needed are requested in <b>batches</b> from a server, and are CACHED.<br><div align="center">[[File:TUT module batching.png|400px|link=]]</div><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=5'
+			}, {
+				name: 'Okay',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '7' );
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
