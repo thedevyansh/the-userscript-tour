@@ -682,7 +682,7 @@
 		.step( {
 			name: '23',
 			title: 'You are impressive!',
-			description: '<br><div align="center">[[File:TUT fireworks small.png|100px|link=]]</div><br>Check out the <b>two magnifying glass buttons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
+			description: '<br><div align="center">[[File:TWA fireworks small.png|100px|link=]]</div><br>Check out the <b>two magnifying glass buttons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
