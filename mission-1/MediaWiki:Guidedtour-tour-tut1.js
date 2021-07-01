@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * Guidedtour-tour-tut1.js
  *
