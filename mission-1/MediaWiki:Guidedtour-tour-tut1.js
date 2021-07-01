@@ -1,5 +1,31 @@
-// The Userscript Tour: Mission 1 (Let's begin the journey)
-( function ( window, document, $, mw, gt ) {
+/**
+ * Guidedtour-tour-tut1.js
+ *
+ * It creates a guided tour for The Userscript Tour: Mission 1 (Let's begin the journey).
+ * It helps the users understand what userscripts are and how they are written and loaded in
+ * their common.js, with the help of walkthroughs.
+ *
+ * The following is the entire license notice for the JavaScript code in this Guided Tour.
+ *
+ * Copyright (C) 2021 Devyansh Chawla <https://meta.wikimedia.org/wiki/User:Novusistic> and contributors
+ *
+ * The JavaScript/Gadget code in this page is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * The above is the entire license notice for the JavaScript code in this Guided Tour.
+ */
+ ( function ( window, document, $, mw, gt ) {
 
 	// Defined the guided tour.
 	var tour = new gt.TourBuilder( {
@@ -143,7 +169,7 @@
 		.step( {
 			name: '2',
 			title: 'Know before you go',
-			description: '<br><b>Don\'t [x] out</b><br> This box is  your tour guide: if you close it before completing a mission, you leave the tour and need to restart the mission from the beginning.<br><br><b>Automatic messages</b><br> When you take this tour, you send some messages to your personal MediaWiki pages, any time you see <big><b>*</b></big> in the blue button.<br><br><b>Source Editor</b><br> This tour uses only the Source Editor, not the Visual Editor.<br><br>',
+			description: '<br><b>Close button (X)</b><br> This box is  your tour guide: if you close it before completing a mission, you leave the tour and need to restart the mission from the beginning.<br><br><b>Automatic messages</b><br> When you take this tour, you send some messages to your personal MediaWiki pages, any time you see <big><b>*</b></big> in the blue button.<br><br><b>Source Editor</b><br> This tour uses only the Source Editor, not the Visual Editor.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -185,7 +211,7 @@
 		.step( {
 			name: '4',
 			title: 'Gadgets',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A gadget is a user script that has been <b>promoted</b> by an <i>interface administrator.</i><br>Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their user preferences.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A gadget is a user script that has been <i>promoted</i> by an interface administrator.<br><br>Logged-in users can enable gadgets in the <b>Gadgets</b> tab of their <b>[[Special:Preferences|Preferences]]</b>.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -206,7 +232,7 @@
 		.step( {
 			name: '5',
 			title: 'Please welcome common.js!',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>A user script comes to life after being written or loaded on <b>common.js.</b><br><br> Confused a bit? Not to worry. We’ll get to it soon.<br><br><br><b>A word of caution</b><br>User scripts enable a user account to do powerful things that it otherwise couldn’t. You are fully responsible for whatever the user script does on your behalf.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>A user script comes to life after being written or loaded on <b>common.js.</b><br><br> Confused a bit? Not to worry. We’ll get to it soon.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -236,7 +262,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=5'
 			}, {
-				name: "I'm logged in",
+				name: 'I\'m logged in',
 				type: 'neutral',
 				onclick: function () {
 					if ( mw.config.get( 'wgUserName' ) === null ) {
@@ -261,8 +287,8 @@
 	tour
 		.step( {
 			name: '7',
-			title: "What's this common.js?",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>It’s <b>your personal JavaScript file,</b> located at User:' + mw.config.get( 'wgUserName' ) + '/common.js.<br><br>This file influences the interface and layout of a wiki for yourself only. It’s loaded regardless of which skin you are using.<br><br>',
+			title: 'What\'s this common.js?',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>It’s <b>your personal JavaScript page,</b> located at User:' + mw.config.get( 'wgUserName' ) + '/common.js.<br><br>This page influences the interface and layout of a wiki for yourself only. It’s loaded regardless of which skin you are using.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -292,7 +318,7 @@
 		.step( {
 			name: '8',
 			title: 'Your common.js',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>This is one of your special files. So now you know the place where you write or load your user scripts. <b>Although public, only you can edit it.</b><br><br>How about loading your very first user script?<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Now you know the place where you write or load your user scripts. <b>Although public, only you can edit it.</b><br><br>How about loading your very first user script?<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -301,7 +327,8 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=7'
 			}, {
-				name: "Let's do this",
+				name: 'Let\'s do this',
+				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
 			} ],
@@ -313,9 +340,9 @@
 		.step( {
 			name: '9',
 			title: 'Sneak Peek!',
-			description: 'Have a look at the user script shown below.',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>GO THROUGH the user script present at the above location.<br><br>We know you won\'t understand everything yet. You\'d get the hang of it once we make you familiar with <b>ResourceLoader</b> and <b>Action API.</b><br><br>Till then, our main focus is to learn to make the script come into effect.<br><br>',
 			onShow: gt.parseDescription,
-			attachTo: '#contentSub',
+			attachTo: '#tutMessageBox1',
 			position: 'bottom',
 			overlay: false,
 			closeOnClickOutside: false,
@@ -324,40 +351,20 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=8'
 			}, {
-				name: 'Done',
-				action: 'next'
+				name: 'That feels better',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=10'
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.next( '10' );
+		} );
 
 	// Step 10
 	tour
 		.step( {
 			name: '10',
-			title: "What's going on here?",
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Don\'t burn out!<br>We know you didn\'t understand everything present in this user script. You\'d feel better once we get you familiar with <b>ResourceLoader</b> and <b>Action API.</b><br><br>Till then, our main focus is to learn to make the script come into effect.<br><br>',
-			onShow: gt.parseDescription,
-			overlay: true,
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
-			}, {
-				name: 'That feels better',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=11'
-			} ],
-			allowAutomaticOkay: false
-		} );
-
-	// Step 11
-	tour
-		.step( {
-			name: '11',
 			title: 'Edit common.js',
-			description: '<br>Edit this file to make your user script come to life.<br><br>Click <b>CREATE SOURCE</b> or <b>EDIT SOURCE</b> above.<br><br>(This tour always uses the SOURCE editor).<br><br>',
+			description: '<br>Edit this page to make your user script come to life.<br><br>Click <b>CREATE SOURCE</b> or <b>EDIT SOURCE</b> above.<br><br>(This tour always uses the SOURCE editor).<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#ca-edit',
 			position: 'bottom',
@@ -366,22 +373,22 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=10'
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
 			} ],
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
 			if ( gt.hasQuery( { action: 'edit' } ) ) {
-				return '12';
+				return '11';
 			}
 		} );
 
-	// Step 12
+	// Step 11
 	tour
 		.step( {
-			name: '12',
-			title: "Let's load the user script",
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br><br>Type:<br><b>mw.loader.load</b>(\'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			name: '11',
+			title: 'Let\'s load the user script',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Copy and paste above:<br><b>mw.loader.load</b>(\'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -390,21 +397,21 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=11'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=10'
 			}, {
-				name: 'Typed it',
+				name: 'Copied and Pasted!',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
-		.next( '13' );
+		.next( '12' );
 
-	// Step 13
+	// Step 12
 	tour
 		.step( {
-			name: '13',
-			title: 'Edit summary and Publish',
-			description: '<br>That looks pretty cool! Before you click Publish, leave a brief note about the changes you made.<br><br>Click PUBLISH when you\'re ready.<br><br>',
+			name: '12',
+			title: 'Edit summary and Save Changes',
+			description: '<br>That looks pretty cool! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -415,15 +422,37 @@
 					[ {
 						name: '<big>←</big>',
 						action: 'externalLink',
-						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=12&action=edit'
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=11&action=edit'
 					} ] :
 					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
 			if ( gt.isPostEdit() ) {
-				return '14';
+				return '13';
 			}
+		} );
+
+	// Step 13
+	tour
+		.step( {
+			name: '13',
+			title: 'Play around',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>You could now see an <b>Invert link</b> on the top toolbar! Play around with it.<br><br>In case you don’t see the link, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=12&action=edit'
+			}, {
+				name: 'That\'s pretty cool',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=14'
+			} ],
+			allowAutomaticOkay: false
 		} );
 
 	// Step 14
@@ -438,7 +467,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=13&action=edit'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=13'
 			}, {
 				name: 'Thanks*',
 				onclick: function () {
@@ -449,45 +478,41 @@
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ),
 						'MediaWiki:TUT/Badge/1template1',
-						mw.util.getUrl( 'MediaWiki:TUT/1/Start' )
+						mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=15'
 					);
 				}
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.transition( function () {
-			if ( mw.config.get( 'wgPageName' ) === 'MediaWiki:TUT/1/Start' ) {
-				return '15';
-			}
 		} );
 
 	// Step 15
 	tour
 		.step( {
 			name: '15',
-			title: 'Play around',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>You could now see an <b>Invert link</b> on the top toolbar! Play around with it.<br><br>In case you don’t see the link, you may try <b>bypassing your cache.</b> Hold the <b>Shift</b> key and click the <i>Reload</i> button on the navigation toolbar.<br><br><br>When done, we’ll play with another user script :)<br><br>',
+			title: 'Your user subpage',
+			description: '<br><br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace to write the user script.<br><br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js ?</b><br><br>',
 			onShow: gt.parseDescription,
-			overlay: false,
+			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=14'
+				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=14'
 			}, {
-				name: 'Continue',
-				action: 'next'
+				name: 'Seems good',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=16'
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.next( '16' );
+		} );
 
 	// Step 16
 	tour
 		.step( {
 			name: '16',
-			title: 'Your user subpage',
-			description: '<br><br>Let\'s try something different this time!<br><br>We shall create a subpage in our user namespace to write the user script.<br><br><br>Well, how about <b>User:' + mw.config.get( 'wgUserName' ) + '/Zoom_and_Toggle.js ?</b><br><br>',
+			title: 'Write a user script here',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Let\'s move ahead to write a user script in this <b>subpage of yours</b>. It would add 2 buttons to zoom in and zoom out the current page.',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -496,18 +521,10 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=15'
 			}, {
-				name: 'Seems good*',
-				onclick: function () {
-					if ( !mw.config.get( 'wgUserName' ) ) {
-						showAlert( 'Please login', 'Please login to continue on the tour.' );
-						return;
-					}
-					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ) + '/Zoom_and_Toggle.js',
-						'MediaWiki:Zoom_Toggle.js',
-						mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=17'
-					);
-				}
+				name: 'Why not?',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=17&action=edit&preload=User:MeTheAdministrator/TUT_zoom.js'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -517,37 +534,43 @@
 		.step( {
 			name: '17',
 			title: 'Sneak Peek!',
-			description: 'Have a CAREFUL look at the user script shown below. It adds 3 buttons to zoom in, zoom out, and toggle font size.',
+			description: '<br>Try to understand what\'s written in the above user script.<br><br>When done, edit the summary and click Save Changes.<br><br>',
 			onShow: gt.parseDescription,
-			attachTo: '#firstHeading',
-			position: 'bottom',
+			attachTo: '#wpSave',
+			position: 'bottomRight',
 			overlay: false,
 			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=16'
-			}, {
-				name: 'Done',
-				action: 'next'
-			} ],
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=16'
+					} ] :
+					postEditButtons,
 			allowAutomaticOkay: false
 		} )
-		.next( '18' );
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '18';
+			}
+		} );
 
 	// Step 18
 	tour
 		.step( {
 			name: '18',
 			title: 'The Rationale',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> <b>useCustom</b> is defined to check whether the font size is default or custom and to determine which toggle button image to use.<br><b>2.</b> The next three variables define the magnifying glass icons to be displayed on the right of the article title.<br><b>3.</b> The DOM elements are created and grabbed using CSS selectors via jQuery.<br><b>4.</b> Later, <b>updateSize(), toggle(), and zoom()</b> are defined to handle the click events on the zoom-in, zoom-out, and toggle buttons.<br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> The zoom-in and zoom-out buttons are instantiated using <b>OOUI</b> (to be discussed later).<br><br><b>2.</b> <b>updateSize() and zoom()</b> functions are defined to handle the click events on the zoom-in and zoom-out buttons.<br><br><b>3.</b> Later, the DOM elements are created and grabbed using CSS selectors via jQuery.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
+			attachTo: '#bodyContent',
+			position: 'bottom',
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=17'
+				url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=17&action=edit'
 			}, {
 				name: 'Sure',
 				action: 'next'
@@ -563,14 +586,17 @@
 			title: 'What\'s next?',
 			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Do you think our task is over?<br>We haven\'t yet LOADED the user script in our common.js. So, let\'s head back to our common.js.<br><br><br><b>P.S.</b>If you recall, we loaded our first script using a similar argument. That\'s how you create user scripts in your user subpage and share them with the community.<br><br>',
 			onShow: gt.parseDescription,
-			overlay: true,
+			overlay: false,
+			attachTo: '#bodyContent',
+			position: 'bottom',
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=18'
+				url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=18'
 			}, {
 				name: 'We are approaching the final steps',
+				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=20'
 			} ],
@@ -591,7 +617,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/Zoom_and_Toggle.js' ) + '?tour=tut1&step=19'
+				url: mw.util.getUrl( 'Special:MyPage/zoomThePage.js' ) + '?tour=tut1&step=19'
 			} ],
 			allowAutomaticOkay: false
 		} )
@@ -606,7 +632,7 @@
 		.step( {
 			name: '21',
 			title: 'Load the user script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Type<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/invert.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Copy and paste above:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -617,7 +643,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=20'
 			}, {
-				name: 'Loaded',
+				name: 'Copied and Pasted!',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
@@ -628,8 +654,8 @@
 	tour
 		.step( {
 			name: '22',
-			title: 'Edit summary and Publish',
-			description: '<br>Well done! Before you click Publish, leave a brief note about the changes you made.<br><br>Click PUBLISH when you\'re ready.<br><br>',
+			title: 'Edit summary and Save Changes',
+			description: '<br>Well done! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Save Changes when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -656,7 +682,7 @@
 		.step( {
 			name: '23',
 			title: 'You are impressive!',
-			description: '<br><div align="center">[[File:TUT fireworks small.png|100px|link=]]</div><br>Check out the <b>three magnifying glass icons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
+			description: '<br><div align="center">[[File:TUT fireworks small.png|100px|link=]]</div><br>Check out the <b>two magnifying glass buttons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -666,6 +692,7 @@
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=22&action=edit'
 			}, {
 				name: 'Where to go next?',
+				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'MediaWiki:TUT/1/End' ) + '?tour=tut1&step=24'
 			} ],
