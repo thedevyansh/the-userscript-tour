@@ -229,7 +229,7 @@
 		.step( {
 			name: '8',
 			title: 'mw.notify()',
-			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add above:<br><b>mw.notify( \'I am on a ResouceLoader Tour:)\' );</b><br><br>',
+			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add above:<br><b>mw.notify( \'*** I am on a ResouceLoader Tour! ***\' );</b><br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -272,6 +272,73 @@
 			if ( gt.isPostEdit() ) {
 				return '10';
 			}
+		} );
+
+	tour
+		.step( {
+			name: '10',
+			title: 'Good work!',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Did you see the bubble notification on the top right? If you didn’t, try bypassing your cache.<br><br>You would now see the notification on every page load since common.js is loaded every time.<br><br><b>How can we go about using the modules other than the base modules?</b><br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=9&action=edit'
+			}, {
+				name: 'Let\'s find the answer',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/2/Question1' ) + '?tour=tut2&step=11'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '11',
+			title: 'Challenge yourself above',
+			description: '<br>Hint: You can learn as much from getting it wrong as getting it right.  And you can always try again!<br>',
+			onShow: gt.parseDescription,
+			attachTo: '#tutMessageBox1',
+			position: 'bottom',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=10'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( mw.config.get( 'wgPageName' ) === 'TUT/2/Question1/2' ) {
+				return '12';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '12',
+			title: 'mw.loader.using()',
+			description: '<br><div align="left">[[File:TUT rocket.png]]</div><br>It\'s actually simple to load modules in user scripts!<br><br>For user scripts, the only way to load dependencies is to do so lazily, by wrapping the code in a <code>mw.loader.using</code> block, and specify the required modules.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#tutMessageBox1',
+			position: 'bottom',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=10'
+			}, {
+				name: 'Continue on the adventure',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=13'
+			} ],
+			allowAutomaticOkay: false
 		} );
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
