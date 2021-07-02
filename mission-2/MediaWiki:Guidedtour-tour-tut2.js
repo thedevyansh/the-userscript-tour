@@ -94,7 +94,7 @@
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
-				name: 'Let\'s go',
+				name: 'Get started',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
@@ -105,16 +105,16 @@
 		.step( {
 			name: '2',
 			title: 'ResourceLoader',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>ResourceLoader</b>, as the name suggests, is a mechanism to <b>intelligently deliver the resources to the wikis.</b><br><br>The resources could be any of the following:<br>1) JavaScript<br>2) Styles<br>3) Messages or Localisation text<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>ResourceLoader</b> is a mechanism to <b>intelligently deliver the resources to the wikis.</b><br><br>The resources could be any of the following:<br>1) JavaScript<br>2) Styles<br>3) Messages or Localisation text *<br><br><small>* Messages ensure that the interfaces should be correct in terms of the localised language.</small><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=1'
+				url: mw.util.getUrl( 'TUT/2/Start' ) + '?tour=tut2&step=1'
 			}, {
-				name: 'Alright',
+				name: 'Are these resources requested separately?',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
@@ -124,17 +124,17 @@
 	tour
 		.step( {
 			name: '3',
-			title: 'More about resources',
-			description: '<br><br>1) <b>JavaScript:</b> These are the scripts that enable dynamic and interactive features on pages they are loaded on.<br><br>2) <b>Styles:</b> These are the stylesheets which are used to format the layout of webpages.<br><br>3) <b>Messages:</b> Since interfaces are loaded dynamically, they should be correct in terms of the localised language. And localisation text does exactly that!<br><br>',
+			title: 'Are these resources requested separately?',
+			description: '<br>They are not...Please welcome <b>MODULES!</b><br><br><div align="center">[[File: TUT modules.png|400px|link=]]</div><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=2'
+				url: mw.util.getUrl( 'TUT/2/Start' ) + '?tour=tut2&step=2'
 			}, {
-				name: 'Are these resources requested separately?',
+				name: 'What is a module?',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
@@ -144,17 +144,17 @@
 	tour
 		.step( {
 			name: '4',
-			title: 'Are these resources requested separately?',
-			description: '<br>They are not...Please welcome <b>MODULES!</b><br><br><div align="center">[[File: TUT modules.png|400px|link=]]</div><br>',
+			title: 'Module',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A module is a <b>bundle of resources.</b> It can contain any type of resources we discussed lately.<br><br>ResourceLoader makes it possible to load a module by just using its name. Multiple modules bundled are delivered to the client in a <b>single request.</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=3'
+				url: mw.util.getUrl( 'TUT/2/Start' ) + '?tour=tut2&step=3'
 			}, {
-				name: 'What is a module?',
+				name: 'Do I have to request all modules?',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
@@ -164,41 +164,114 @@
 	tour
 		.step( {
 			name: '5',
-			title: 'Module',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>A module is a <b>bundle of resources.</b> It can contain any type of resources we discussed lately.<br><br>ResourceLoader makes it possible to load a module by just using its name. Multiple modules bundled are delivered to the client in a <b>single request.</b><br><br><i>This concept is responsible for MediaWiki\'s low-cost high-performant front end.</i><br><br>',
+			title: 'Do I have to request all modules?',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Not always!<br><br>The modules <b>mediawiki</b> and <b>jquery</b> together form the base environment and are ALWAYS present.<br><br>In other words, these modules will <b>never</b> be requested since they are ubiquitous.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=4'
+				url: mw.util.getUrl( 'TUT/2/Start' ) + '?tour=tut2&step=4'
 			}, {
-				name: 'How are the modules loaded?',
-				action: 'next'
+				name: 'Noted',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=6'
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.next( '6' );
+		} );
 
 	tour
 		.step( {
 			name: '6',
-			title: 'Thanks to the RL Client :)',
-			description: '<br>The <b>ResourceLoader Client</b> is in charge of loading and executing modules from the server.<br><br>All modules needed are requested in <b>batches</b> from a server, and are CACHED.<br><div align="center">[[File:TUT module batching.png|400px|link=]]</div><br>',
+			title: 'Hands-On',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Let\'s start simple. We\'ll show a <b>bubble notification</b> on the page.<br><br>',
 			onShow: gt.parseDescription,
-			overlay: true,
+			overlay: false,
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/2/Start' ) + '?tour=tut2&step=5'
+				url: mw.util.getUrl( 'TUT/2/Start' ) + '?tour=tut2&step=5'
 			}, {
-				name: 'Okay',
+				name: 'Should be fun',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
 		.next( '7' );
+
+	tour
+		.step( {
+			name: '7',
+			title: 'Edit common.js',
+			description: '<br>Edit this page.<br><br>Click <b>CREATE SOURCE</b> or <b>EDIT SOURCE</b> above.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#ca-edit',
+			position: 'bottom',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=6'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.hasQuery( { action: 'edit' } ) ) {
+				return '8';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '8',
+			title: 'mw.notify()',
+			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add above:<br><b>mw.notify( \'I am on a ResouceLoader Tour:)\' );</b><br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.wikiEditor-ui-text',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=7'
+			}, {
+				name: 'Added!',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '9' );
+
+	// Step 12
+	tour
+		.step( {
+			name: '9',
+			title: 'Edit summary and Save Changes',
+			description: '<br>Nice! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=8&action=edit'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '10';
+			}
+		} );
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
