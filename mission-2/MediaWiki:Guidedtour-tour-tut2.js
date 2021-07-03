@@ -105,7 +105,7 @@
 		.step( {
 			name: '2',
 			title: 'ResourceLoader',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>ResourceLoader</b> is a mechanism to <b>intelligently deliver the resources to the wikis.</b><br><br>The resources could be any of the following:<br>1) JavaScript<br>2) Styles<br>3) Messages or Localisation text *<br><br><small>* Messages ensure that the interfaces should be correct in terms of the localised language.</small><br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>ResourceLoader</b> is a mechanism to <b>intelligently deliver the resources to the wikis.</b><br><br>The resources could be any of the following:<br>1) JavaScript<br>2) Styles<br>3) Messages<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -229,7 +229,7 @@
 		.step( {
 			name: '8',
 			title: 'mw.notify()',
-			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add above:<br><b>mw.notify( \'*** I am on a ResouceLoader Tour! ***\' );</b><br><br>',
+			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add the following line at the end:<br><b>mw.notify( \'* I am on a ResouceLoader Tour! *\' );</b><br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -247,7 +247,6 @@
 		} )
 		.next( '9' );
 
-	// Step 12
 	tour
 		.step( {
 			name: '9',
@@ -287,7 +286,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=9&action=edit'
 			}, {
-				name: 'Let\'s find the answer',
+				name: 'Let\'s find out',
 				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/2/Question1' ) + '?tour=tut2&step=11'
@@ -333,10 +332,270 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=10'
 			}, {
-				name: 'Continue on the adventure',
+				name: 'Hands-On',
 				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=13'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '13',
+			title: 'Toggle font color',
+			description: '<div align="right">[[File:TUT nurturing yourself.png]]</div><br>We would be using the modules: <b>mediawiki.util</b> and <b>oojs-ui-core.</b><br><br>Go through the comments in the user script that we\'re going to put up for you in your common.js<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/2/Question1/2' ) + '?tour=tut2&step=12'
+			}, {
+				name: 'Sure, thanks*',
+				onclick: function () {
+					if ( !mw.config.get( 'wgUserName' ) ) {
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
+						return;
+					}
+					sendMessage(
+						'User:' + mw.config.get( 'wgUserName' ) + '/common.js',
+						'User:Novusistic/toggleFontColor.js',
+						mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=14'
+					);
+				}
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '14',
+			title: 'Play around',
+			description: '<br>Click the toggle button to change the font color. Or bypass your cache in case the button is not visible.<br><br>Pretty neat...How about a glance at the <b>core modules<b/>?<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.toggleColorBtn',
+			position: 'bottomLeft',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Let\'s see',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/2/ResourceLoader/CoreModules' ) + '?tour=tut2&step=15'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '15',
+			title: 'Sneak Peek',
+			description: '<br><div align="left">[[File:TUT rocket.png]]</div><br>Have a look at some of the core modules and their properties & methods above.<br><br>To have an exhaustive view of all the core modules, click <b>Check all modules</b>. You can always use it as a reference.<br><br>Click <b>Continue</b> to continue on the tour.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#tutMessageBox1',
+			position: 'bottom',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=14'
+			}, {
+				name: 'Check all modules',
+				action: 'externalLink',
+				url: 'https://www.mediawiki.org/wiki/ResourceLoader/Core_modules'
+			}, {
+				name: 'Continue',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=16'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '16',
+			title: 'Your subpage',
+			description: '<br>You’ll now put everything you have learned so far into action in subpage - <b>User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js</b>.<br><br>The next user script shows a dialog with up to 25 recent edits on the entire wiki!<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/2/ResourceLoader/CoreModules' ) + '?tour=tut2&step=15'
+			}, {
+				name: 'Okay',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=17&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '17',
+			title: 'Check it out',
+			description: '<br>The above user script is a good example. You may refer <b>[[ResourceLoader/Core_modules]]</b> anytime.<br><br>Have a look at this script and when done, edit summary and save the changes.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=16'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '18';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '18',
+			title: 'The Rationale',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> The required modules are called.<br><b>2.</b> When the page is fully loaded, a new link is added to the Portlet area.<br><b>3. quickRC()</b> fetches the recent changes and passes the data to renderQuickRCDialog().<br><b>4. renderQuickRCDialog()</b> pops up a dialog when the QUICK CHANGELOG link in the toolbox is clicked. The dialog contains the recent changes.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '#bodyContent',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=17&action=edit'
+			}, {
+				name: 'Let\'s head to common.js',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=19&action=edit'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '19',
+			title: 'Load Quick ChangeLog',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case your common.js looks cluttered at this point, feel free to clear it up :)<br><br>Now copy and paste above:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.wikiEditor-ui-text',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=18'
+			}, {
+				name: 'Copied and Pasted!',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '20' );
+
+	tour
+		.step( {
+			name: '20',
+			title: 'Edit summary and Save Changes',
+			description: '<br>Great! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Save Changes when you\'re ready.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=19&action=edit'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '21';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '21',
+			title: 'Play around',
+			description: '<br>Click the QUICK CHANGELOG link in the toolbox.<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#t-prettylinkwidget',
+			position: 'right',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=20&action=edit'
+			}, {
+				name: 'Legit',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=22'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '22',
+			title: 'Congrats!',
+			description: 'New badge earned: <b>CONQUEROR</b><div class="center">[[File:TUT badge 2.png|110px|link=]]</div><br>Kudos! You have been resilient all this time. Great work!<br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=21'
+			}, {
+				name: 'Thanks*',
+				onclick: function () {
+					if ( !mw.config.get( 'wgUserName' ) ) {
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
+						return;
+					}
+					sendMessage(
+						'User:' + mw.config.get( 'wgUserName' ),
+						'TUT/Badge/2template1',
+						mw.util.getUrl( 'TUT/2/End' ) + '?tour=tut2&step=23'
+					);
+				}
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '23',
+			title: 'Mission 2 complete!',
+			description: '<br>This concludes <b>Mission 2:</b> Developing with ResourceLoader.<br><br>You\'re all set for your journey on <b>Mission 3:</b> Strengths of the Action API<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Congrats me!',
+				action: 'end'
 			} ],
 			allowAutomaticOkay: false
 		} );
