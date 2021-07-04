@@ -361,7 +361,7 @@
 					}
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ) + '/common.js',
-						'User:Novusistic/toggleFontColor.js',
+						'User:Novusistic/TUT_toggleFontColor.js',
 						mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=14'
 					);
 				}
@@ -392,7 +392,7 @@
 		.step( {
 			name: '15',
 			title: 'Sneak Peek',
-			description: '<br><div align="left">[[File:TUT rocket.png]]</div><br>Have a look at some of the core modules and their properties & methods above.<br><br>To have an exhaustive view of all the core modules, click <b>Check all modules</b>. You can always use it as a reference.<br><br>Click <b>Continue</b> to continue on the tour.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png]]</div><br>To have an exhaustive view of all the core modules, click <b>Check all modules</b>. You can always use it as a reference.<br><br>Click <b>Continue</b> to continue on the tour.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#tutMessageBox1',
 			position: 'bottom',
