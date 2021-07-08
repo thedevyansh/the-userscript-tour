@@ -116,7 +116,7 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: 'New Message (simulated automatically as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]])',
+						summary: 'New Message (simulated automatically as part of [[The Userscript Tour]])',
 						token: csrfToken
 					} )
 					.done( function () {
