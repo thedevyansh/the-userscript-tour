@@ -125,7 +125,7 @@
 		.step( {
 			name: '3',
 			title: 'Are these resources requested separately?',
-			description: '<br>They are not...Please welcome <b>MODULES!</b><br><br><div align="center">[[File: TUT modules.png|400px|link=]]</div><br>',
+			description: '<br>These resources are not requested separately.<br><br>Please welcome <b>MODULES!</b><br><br><div align="center">[[File: TUT modules.png|350px|link=]]</div><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -229,7 +229,7 @@
 		.step( {
 			name: '8',
 			title: 'mw.notify()',
-			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add the following line at the end:<br><b>mw.notify( $( \'<nowiki><span style="color: #EB5160; font-weight: bold;">I am on RESOURCELOADER TOUR</span></nowiki>\' ) );</b><br><br>',
+			description: '<br>The base module <b>mediawiki</b> initialises the <code>mw</code> global object.<br><br>Add the following line at the end:<br><b>mw.notify( \'I am on RESOURCELOADER TOUR.\', { type: \'success\' } );</b><br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -344,7 +344,7 @@
 		.step( {
 			name: '13',
 			title: 'Toggle font color',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Now, we would be using the modules: <b>mediawiki.util</b> and <b>oojs-ui-core.</b><br><br>Go through the comments in the user script that we\'re going to put up for you in common.js<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Now, we would be using the module: <b>mediawiki.util.</b><br><br>Go through the comments in the user script that we\'re going to put up for you in common.js<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -373,14 +373,14 @@
 		.step( {
 			name: '14',
 			title: 'Play around',
-			description: '<br>Click the toggle button to change the font color. Or bypass your cache in case the button is not visible.<br><br>Also, you can check its user script in your common.js below.<br><br>How about a glance at the <b>core modules<b/>?<br><br>',
+			description: '<br>Click the \'Toggle color\' link to change the font color. Or bypass your cache in case the button is not visible.<br><br>Also, you can check its user script in your common.js below.<br><br>',
 			onShow: gt.parseDescription,
-			attachTo: '.toggleColorBtn',
+			attachTo: '#t-toggleFontColor',
 			position: 'bottomLeft',
 			overlay: false,
 			closeOnClickOutside: false,
 			buttons: [ {
-				name: 'Let\'s see',
+				name: 'Let\'s check the core modules',
 				type: 'progressive',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/2/ResourceLoader/CoreModules' ) + '?tour=tut2&step=15'
@@ -410,7 +410,7 @@
 				name: 'Continue',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=17'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=17'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -433,7 +433,7 @@
 				name: 'Continue on the tour',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=17'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=17'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -442,7 +442,7 @@
 		.step( {
 			name: '17',
 			title: 'Your subpage',
-			description: '<br>You’ll now put everything you have learned so far into action in the subpage - <b>User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js</b>.<br><br>The next user script shows a dialog with up to 25 recent edits on the entire wiki!<br><br>',
+			description: '<br>Next, we\'ll be using mw.config in our user script. Let\'s create a subpage - <b>User:' + mw.config.get( 'wgUserName' ) + '/userEditCount.js</b>.<br><br>This script will show the count of edits made by you on the current wiki.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -454,7 +454,7 @@
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=18&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=18&action=edit&preload=User:Novusistic/TUT_userEditCount.js'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -463,7 +463,7 @@
 		.step( {
 			name: '18',
 			title: 'Check it out',
-			description: '<br>The above user script is a good example. You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this script and when done, edit summary and save the changes.<br><br>',
+			description: '<br>You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this tiny script and when done, edit summary and save the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -474,7 +474,7 @@
 					[ {
 						name: '<big>←</big>',
 						action: 'externalLink',
-						url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=17'
+						url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=17'
 					} ] :
 					postEditButtons,
 			allowAutomaticOkay: false
@@ -489,7 +489,7 @@
 		.step( {
 			name: '19',
 			title: 'The Rationale',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> The required modules are called.<br><b>2.</b> When the page is fully loaded, a new link is added to the Portlet area.<br><b>3. quickRC()</b> fetches the recent changes and passes the data to renderQuickRCDialog().<br><b>4. renderQuickRCDialog()</b> pops up a dialog when the QUICK CHANGELOG link in the toolbox is clicked. The dialog contains the recent changes.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The logic behind the user script goes like this:<br><br><b>1.</b> The user script waits for the page to load.<br><br><b>2.</b> When it does, the count of edits made by the logged-in user is found using <b>mw.config.get()</b> method.<br><br><b>3.</b> Finally, the edit count is appended to the username of the logged-in user at the personal portlet area.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			attachTo: '#bodyContent',
@@ -498,7 +498,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=18&action=edit'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=18&action=edit'
 			}, {
 				name: 'Let\'s head to common.js',
 				type: 'progressive',
@@ -511,8 +511,8 @@
 	tour
 		.step( {
 			name: '20',
-			title: 'Load Quick ChangeLog',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case your common.js looks cluttered at this point, feel free to clear it up :)<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			title: 'Load the script',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case your common.js looks cluttered at this point, feel free to clear it up :)<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/userEditCount.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -521,7 +521,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut2&step=19'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=19'
 			}, {
 				name: 'Copied and Pasted!',
 				action: 'next'
@@ -559,11 +559,11 @@
 	tour
 		.step( {
 			name: '22',
-			title: 'Play around',
-			description: '<br>Click the QUICK CHANGELOG link in the toolbox.<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
+			title: 'See something?',
+			description: '<br>You could now see the count of edits made by you on this wiki (in brackets).<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
 			onShow: gt.parseDescription,
-			attachTo: '#t-prettylinkwidget',
-			position: 'right',
+			attachTo: '#pt-userpage',
+			position: 'bottom',
 			overlay: false,
 			closeOnClickOutside: false,
 			buttons: [ {
