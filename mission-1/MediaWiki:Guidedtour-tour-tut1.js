@@ -25,7 +25,7 @@
  *
  * The above is the entire license notice for the JavaScript code in this Guided Tour.
  */
- ( function ( window, document, $, mw, gt ) {
+( function ( window, document, $, mw, gt ) {
 
 	// Defined the guided tour.
 	var tour = new gt.TourBuilder( {
