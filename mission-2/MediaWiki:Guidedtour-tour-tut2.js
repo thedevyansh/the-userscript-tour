@@ -498,7 +498,7 @@
 		.step( {
 			name: '16',
 			title: 'All the core modules!',
-			description: '<br>The following gives a detailed view of all the ResourceLoader core modules. Have a look.<br><br>',
+			description: '<div align="left">[[File:TUT rocket.png|90px|link=]]</div><br>The following gives a detailed view of all the ResourceLoader core modules. Have a look.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#contentSub',
 			position: 'bottom',
@@ -645,7 +645,7 @@
 		.step( {
 			name: '22',
 			title: 'See something?',
-			description: '<br>You could now see the count of edits made by you on this wiki (in brackets).<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
+			description: '<br>You can now see the count of edits made by you on this wiki (in brackets).<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#pt-userpage',
 			position: 'bottom',
