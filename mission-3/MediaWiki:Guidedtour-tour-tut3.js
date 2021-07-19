@@ -218,8 +218,10 @@
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=3'
 			}, {
 				name: 'Browse demo apps on Toolforge',
-				action: 'externalLink',
-				url: 'https://apps-gallery.toolforge.org/'
+				type: 'neutral',
+				onclick: function () {
+					window.open( 'https://apps-gallery.toolforge.org/', '_blank' );
+				}
 			}, {
 				name: 'Done',
 				action: 'next'
@@ -627,5 +629,187 @@
 			allowAutomaticOkay: false
 		} )
 		.back( '21' );
+
+	tour
+		.step( {
+			name: '23',
+			title: 'Your subpage',
+			description: '<br>You’ll now put everything you have learned so far into action in the subpage - <b>User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js</b>.<br><br>The next user script shows a dialog with up to 25 recent edits on the entire wiki!<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Okay',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=24&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '24',
+			title: 'Check it out',
+			description: '<br>The above user script combines the <b>crux</b> of the ongoing as well as previous missions.<br><br>Have a good look at this script and when done, edit summary and save the changes.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '25';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '25',
+			title: 'The Rationale',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>LOGIC:<br><br><b>1.</b> The required modules are called.<br><b>2.</b> When the page is fully loaded, a new link is added to the Portlet area.<br><b>3. quickRC()</b> fetches the recent changes using the Action API and passes the data to renderQuickRCDialog().<br><b>4. renderQuickRCDialog()</b> pops up a dialog when the QUICK CHANGELOG link in the toolbox is clicked. The dialog contains the recent changes.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '#bodyContent',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=24&action=edit'
+			}, {
+				name: 'Let\'s head to common.js',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=26&action=edit'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '26',
+			title: 'Load Quick ChangeLog',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.wikiEditor-ui-text',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=25'
+			}, {
+				name: 'Copied and Pasted!',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '27' );
+
+	tour
+		.step( {
+			name: '27',
+			title: 'Edit summary and Save Changes',
+			description: '<br>Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Save Changes when you\'re ready.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=26&action=edit'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '28';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '28',
+			title: 'Play around',
+			description: '<br>Click the QUICK CHANGELOG link in the toolbox.<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#t-prettylinkwidget',
+			position: 'right',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=27&action=edit'
+			}, {
+				name: 'Legit',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=29'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '29',
+			title: 'Congrats!',
+			description: 'New badge earned: <b>ONE FRONTIER TO GO</b><div class="center">[[File:TUT badge 3.png|110px|link=]]</div><br>Brilliant work! Take your time to pat on your shoulder for coming this far.<br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=28'
+			}, {
+				name: 'Thanks*',
+				onclick: function () {
+					if ( !mw.config.get( 'wgUserName' ) ) {
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
+						return;
+					}
+					sendMessage(
+						'User:' + mw.config.get( 'wgUserName' ),
+						'TUT/Badge/3template1',
+						mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=30'
+					);
+				}
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '30',
+			title: 'Mission 3 complete!',
+			description: '<br>This concludes <b>Mission 3.</b><br><br>You\'re all set for your journey on <b>Mission 4:</b> Novelty of OOUI<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Congrats me!',
+				action: 'end'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
