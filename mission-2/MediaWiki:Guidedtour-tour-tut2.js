@@ -483,7 +483,7 @@
 			}, {
 				name: 'Check all modules',
 				action: 'externalLink',
-				url: 'https://www.mediawiki.org/wiki/ResourceLoader/Core_modules?tour=tut2&step=16'
+				url: mw.util.getUrl( 'ResourceLoader/Core_modules' ) + '?tour=tut2&step=16'
 			}, {
 				name: 'Continue',
 				type: 'progressive',
