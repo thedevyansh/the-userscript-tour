@@ -521,4 +521,111 @@
 		} )
 		.next( '18' );
 
+	tour
+		.step( {
+			name: '18',
+			title: 'main module',
+			description: '<br>This is the main module with available parameters.<br><br>Choose <b>"query"</b> from the dropdown corresponding to the parameter <b>"action"</b>, below.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '#mw-head',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'back'
+			}, {
+				name: 'Selected query module',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.back( '17' )
+		.next( '19' );
+
+	tour
+		.step( {
+			name: '19',
+			title: 'action=query',
+			description: '<br>Next, select <b>action=query</b> from the sidebar.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '.oo-ui-menuLayout-menu',
+			position: 'rightTop',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'back'
+			}, {
+				name: 'Done',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.back( '18' )
+		.next( '20' );
+
+	tour
+		.step( {
+			name: '20',
+			title: 'query module',
+			description: '<br>This is the query module with available parameters.<br><br><b>1)</b> Select <b>"info"</b> from the dropdown corresponding to the parameter- <b>prop</b><br><b>2)</b> Type <b>API:Main_page</b> in the field corresponding to the parameter- <b>titles</b><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '#mw-head',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'back'
+			}, {
+				name: 'Selected',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.back( '19' )
+		.next( '21' );
+
+	tour
+		.step( {
+			name: '21',
+			title: 'Make request',
+			description: '<br>Once done, click MAKE REQUEST to send the API request.<br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '.mw-apisandbox-toolbar',
+			position: 'bottomRight',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'back'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.back( '20' );
+
+	tour
+		.step( {
+			name: '22',
+			title: 'API response',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Here\'s the response from the server! If you have noticed, the API request we sent using the Sandbox is exactly the same as the request we sent in our previous userscript.<br><br>In the similar manner, you can test your API requests using different combinations of modules, submodules, and parameters.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '.api-pretty-content',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'back'
+			}, {
+				name: 'That is cool',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.back( '21' );
+
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
