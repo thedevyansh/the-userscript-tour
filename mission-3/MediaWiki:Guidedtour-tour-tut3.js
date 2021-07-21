@@ -148,6 +148,7 @@
 		} );
 	}
 
+	// Step 1
 	tour
 		.firstStep( {
 			name: '1',
@@ -164,11 +165,12 @@
 		} )
 		.next( '2' );
 
+	// Step 2
 	tour
 		.step( {
 			name: '2',
-			title: 'Action API',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is a web service that allows access to wiki-features like authentication, page operations, and search.<br><br>It\'s a medium to perform actions on a wiki <i>programmatically.</i><br><br>',
+			title: 'MediaWiki Action API',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is a web service that allows access to wiki-features like page operations (create and edit a page, get the contents of a page, etc.) and search.<br><br>It\'s a medium to perform actions on a wiki <i>programmatically.</i><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -177,18 +179,19 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=1'
 			}, {
-				name: 'Alright',
+				name: 'Okay!',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
 		.next( '3' );
 
+	// Step 3
 	tour
 		.step( {
 			name: '3',
 			title: 'What can it be used for?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The Action API can be used to:<br>1) access wiki features<br>2) interact with a wiki<br>3) obtain meta-information about wikis and public users<br><br>Think of any operation you can perform on a wiki via the user-interface. You can perform the same and <b>more</b> via the Action API!<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API can be used to:<br>1) access wiki features<br>2) interact with a wiki<br>3) obtain meta-information about wikis and public users<br><br>The wiki operations that can be performed via the user-interface can also be performed via the MediaWiki Action API.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -204,11 +207,12 @@
 		} )
 		.next( '4' );
 
+	// Step 4
 	tour
 		.step( {
 			name: '4',
-			title: 'Interesting use cases',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>To have a glimpse of the demo apps created using the Action API, we encourage you to explore <b>Toolforge.</b><br><br>It shows a plethora of things you can build using the API.<br><br>',
+			title: 'Interesting use case',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>A widely used application of MediaWiki Action API is <b>HotCat.</b><br><br>HotCat facilitates addition, removal and changing of categories on wiki pages.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -217,24 +221,25 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=3'
 			}, {
-				name: 'Browse demo apps on Toolforge',
+				name: 'Explore HotCat',
 				type: 'neutral',
 				onclick: function () {
-					window.open( 'https://apps-gallery.toolforge.org/', '_blank' );
+					window.open( 'https://commons.wikimedia.org/wiki/Help:Gadget-HotCat', '_blank' );
 				}
 			}, {
-				name: 'Done',
+				name: 'Move ahead',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
 		.next( '5' );
 
+	// Step 5
 	tour
 		.step( {
 			name: '5',
-			title: 'Hands-on Action API',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Let\'s leverage the Action API.<br><br>To begin with, we\'ll fetch the basic information about the wiki pages - in this case, the MediaWiki pages.<br><br>',
+			title: 'Hands-on',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Let\'s leverage the MediaWiki Action API.<br><br>To begin with, we\'ll fetch the basic information about the wiki pages.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -251,6 +256,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 6
 	tour
 		.step( {
 			name: '6',
@@ -272,6 +278,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 7
 	tour
 		.step( {
 			name: '7',
@@ -298,6 +305,7 @@
 			}
 		} );
 
+	// Step 8
 	tour
 		.step( {
 			name: '8',
@@ -321,6 +329,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 9
 	tour
 		.step( {
 			name: '9',
@@ -344,6 +353,7 @@
 			}
 		} );
 
+	// Step 10
 	tour
 		.step( {
 			name: '10',
@@ -366,6 +376,7 @@
 		} )
 		.next( '11' );
 
+	// Step 11
 	tour
 		.step( {
 			name: '11',
@@ -392,6 +403,7 @@
 			}
 		} );
 
+	// Step 12
 	tour
 		.step( {
 			name: '12',
@@ -415,6 +427,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 13
 	tour
 		.step( {
 			name: '13',
@@ -435,6 +448,7 @@
 		} )
 		.next( '14' );
 
+	// Step 14
 	tour
 		.step( {
 			name: '14',
@@ -455,11 +469,12 @@
 		} )
 		.next( '15' );
 
+	// Step 15
 	tour
 		.step( {
 			name: '15',
 			title: 'Where to go for reference?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is big. To work out your API request:<br><br>In the sidebar of the <b>API Main Page</b>, look for the feature you wish to implement and follow the link for information about which modules to call.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is big. To work out your API request:<br><br>In the sidebar of the <b>API:Main_page</b>, look for the feature you wish to implement and follow the link for information about which modules to call.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -468,18 +483,23 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=14'
 			}, {
-				name: 'Check the API main page',
+				name: 'API:Main_page',
 				action: 'externalLink',
-				url: 'https://www.mediawiki.org/wiki/API:Main_page?tour=tut3&step=16'
+				url: mw.util.getUrl( 'API:Main_page' ) + '?tour=tut3&step=16'
 			}, {
-				name: 'What\'s next',
-				type: 'progressive',
+				name: 'API Sandbox',
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:ApiSandbox' ) + '?tour=tut3&step=17'
+			}, {
+				name: 'Next',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
 			} ],
 			allowAutomaticOkay: false
 		} );
 
+	// Step 16
 	tour
 		.step( {
 			name: '16',
@@ -495,14 +515,15 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=15'
 			}, {
-				name: 'What\'s next',
+				name: 'Continue on the tour',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:ApiSandbox' ) + '?tour=tut3&step=17'
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
 			} ],
 			allowAutomaticOkay: false
 		} );
 
+	// Step 17
 	tour
 		.step( {
 			name: '17',
@@ -523,6 +544,7 @@
 		} )
 		.next( '18' );
 
+	// Step 18
 	tour
 		.step( {
 			name: '18',
@@ -545,6 +567,7 @@
 		.back( '17' )
 		.next( '19' );
 
+	// Step 19
 	tour
 		.step( {
 			name: '19',
@@ -567,6 +590,7 @@
 		.back( '18' )
 		.next( '20' );
 
+	// Step 20
 	tour
 		.step( {
 			name: '20',
@@ -589,6 +613,7 @@
 		.back( '19' )
 		.next( '21' );
 
+	// Step 21
 	tour
 		.step( {
 			name: '21',
@@ -607,11 +632,12 @@
 		} )
 		.back( '20' );
 
+	// Step 22
 	tour
 		.step( {
 			name: '22',
 			title: 'API response',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Here\'s the response from the server! If you have noticed, the API request we sent using the Sandbox is exactly the same as the request we sent in our previous userscript.<br><br>In the similar manner, you can test your API requests using different combinations of modules, submodules, and parameters.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Here\'s the response from the server!<br><br>In the similar manner, you can test your API requests using different combinations of modules, submodules, and parameters.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			attachTo: '.api-pretty-content',
@@ -619,7 +645,8 @@
 			closeOnClickOutside: false,
 			buttons: [ {
 				name: '<big>←</big>',
-				action: 'back'
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:ApiSandbox' ) + '?tour=tut3&step=17'
 			}, {
 				name: 'That is cool',
 				type: 'progressive',
@@ -627,9 +654,9 @@
 				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.back( '21' );
+		} );
 
+	// Step 23
 	tour
 		.step( {
 			name: '23',
@@ -639,6 +666,10 @@
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=15'
+			}, {
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
@@ -647,6 +678,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 24
 	tour
 		.step( {
 			name: '24',
@@ -673,6 +705,7 @@
 			}
 		} );
 
+	// Step 25
 	tour
 		.step( {
 			name: '25',
@@ -696,6 +729,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 26
 	tour
 		.step( {
 			name: '26',
@@ -718,6 +752,7 @@
 		} )
 		.next( '27' );
 
+	// Step 27
 	tour
 		.step( {
 			name: '27',
@@ -744,6 +779,7 @@
 			}
 		} );
 
+	// Step 28
 	tour
 		.step( {
 			name: '28',
@@ -767,6 +803,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 29
 	tour
 		.step( {
 			name: '29',
@@ -796,6 +833,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 30
 	tour
 		.step( {
 			name: '30',
@@ -810,6 +848,5 @@
 			} ],
 			allowAutomaticOkay: false
 		} );
-
 
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
