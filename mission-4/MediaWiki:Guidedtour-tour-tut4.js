@@ -430,4 +430,212 @@
 			allowAutomaticOkay: false
 		} );
 
+	tour
+		.step( {
+			name: '14',
+			title: 'Custom user interface',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>OOUI provides the flexibility to create user interfaces that fit your needs.<br><br>It includes many widgets and layouts that are ready to use, as well as basic elements that can be mixed and matched to create custom user interfaces.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=13'
+			}, {
+				name: 'Sounds good',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '15' );
+
+	tour
+		.step( {
+			name: '15',
+			title: 'Interactive demos',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Have a look at the <b>OOUI demos</b> that show numerous widgets, layouts, dialogs, icons, and toolbars. The fun part is you can get to know how these are implemented, right away!<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/4/Start' ) + '?tour=tut4&step=14'
+			}, {
+				name: 'Explore the demos',
+				type: 'neutral',
+				onclick: function () {
+					window.open( 'https://doc.wikimedia.org/oojs-ui/master/demos/', '_blank' );
+				}
+			}, {
+				name: 'Next',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '16' );
+
+	tour
+		.step( {
+			name: '16',
+			title: 'A cool userscript',
+			description: '<br><div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Our next user script would be fun just like the OOUI demos you saw previously.<br><br>It mixes and matches various widgets to create a custom user interface.<br><br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/4/Start' ) + '?tour=tut4&step=15'
+			}, {
+				name: 'Let\'s go',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=17'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '17',
+			title: 'Your subpage',
+			description: '<br>In this user script, you will have to <b>guess a random number.</b> It depicts how various OOUI elements can be composed to create user interfaces.<br><br>Your subpage is <b>User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js</b><br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/4/Start' ) + '?tour=tut4&step=16'
+			}, {
+				name: 'Okay',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=18&action=edit&preload=User:Novusistic/TUT_guessRandomNumber.js'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '18',
+			title: 'Sneak Peek',
+			description: '<br>The above script is well-documented. Try to understand the fundamental aspects of it.<br><br>Once done, edit summary and save the changes.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=17'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '19';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '19',
+			title: 'The Rationale',
+			description: '<br><br>You may go through the comments in the above user script first. The LOGIC is explained below in brief:<br><br>1) A custom widget <b>RandomNumberWidget</b> is created by extending <b>OO.ui.Widget.</b><br><br>2) This custom widget mixes MessageWidget, LabelWidget, TextInputWidget, and ButtonWidget.<br><br>3) Methods - <b>onBtnClick, setGameOver,</b> and <b>setLabels</b> are created to define the behaviour when the user interacts with the widget.<br><br>4) Finally, the custom widget is instantiated and appended to DOM.<br>',
+			onShow: gt.parseDescription,
+			overlay: false,
+			attachTo: '#bodyContent',
+			position: 'bottom',
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=18&action=edit'
+			}, {
+				name: 'Got it',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=20&action=edit'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '20',
+			title: 'Load the script',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Copy and paste the following at the end of common.js:<br><br><b>mw.loader.load</b>( \'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.wikiEditor-ui-text',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=19'
+			}, {
+				name: 'Done',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '21' );
+
+	tour
+		.step( {
+			name: '21',
+			title: 'Edit summary and Save Changes',
+			description: '<br>Perfect! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '#wpSave',
+			position: 'bottomRight',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons:
+				postEditButtons.length === 0 ?
+					[ {
+						name: '<big>←</big>',
+						action: 'externalLink',
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=20&action=edit'
+					} ] :
+					postEditButtons,
+			allowAutomaticOkay: false
+		} )
+		.transition( function () {
+			if ( gt.isPostEdit() ) {
+				return '22';
+			}
+		} );
+
+	tour
+		.step( {
+			name: '22',
+			title: 'A tiny game!',
+			description: '<br>There you go! You have your very own random number guessing game. Hmm, let’s see if you can win this one :)<br><br>In case you can’t see it, try bypassing your cache.<br><br>',
+			onShow: gt.parseDescription,
+			attachTo: '.guessRandomNumberWidget',
+			position: 'bottomLeft',
+			overlay: false,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=21&action=edit'
+			}, {
+				name: 'This is cool',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/4/Start' ) + '?tour=tut4&step=23'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
 }( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
