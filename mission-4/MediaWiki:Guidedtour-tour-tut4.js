@@ -633,7 +633,51 @@
 				name: 'This is cool',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'TUT/4/Start' ) + '?tour=tut4&step=23'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=23'
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '23',
+			title: 'Congrats!',
+			description: 'Final badge earned: <b>Target reached</b><div class="center">[[File:TUT badge 4.png|110px|link=]]</div><br>Bravo! You have successfully completed <b>THE USERSCRIPT TOUR. </b>We\'re all impressed!<br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=22'
+			}, {
+				name: 'Thanks*',
+				onclick: function () {
+					if ( !mw.config.get( 'wgUserName' ) ) {
+						showAlert( 'Please login', 'Please login to continue on the tour.' );
+						return;
+					}
+					sendMessage(
+						'User:' + mw.config.get( 'wgUserName' ),
+						'TUT/Badge/4template1',
+						mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=24'
+					);
+				}
+			} ],
+			allowAutomaticOkay: false
+		} );
+
+	tour
+		.step( {
+			name: '24',
+			title: 'Mission 4 complete!',
+			description: '<div align="center">[[File:TWA fireworks6.png|120px|link=]]</div><br>This concludes Mission 4 and with it, The Userscript Tour. You are now equipped with the fundamental constructs required to write creative user scripts.<br><br>So, what are you waiting for? Happy contributing to MediaWiki :)<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: 'Congratulations!',
+				action: 'end'
 			} ],
 			allowAutomaticOkay: false
 		} );
