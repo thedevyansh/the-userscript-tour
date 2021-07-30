@@ -1,0 +1,15 @@
+{
+  "name": "mission-3",
+  "version": "1.0.0",
+  "description": "Mission 3 introduces users to the MediaWiki Action API and teaches them how to make API calls in userscripts.",
+  "main": "MediaWiki:Guidedtour-tour-tut3.js",
+  "scripts": {
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
+  },
+  "author": "Devyansh Chawla",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-wikimedia": "^0.20.0"
+  }
+}
