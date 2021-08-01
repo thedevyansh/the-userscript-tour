@@ -658,7 +658,7 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ),
+						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/4template1',
 						mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=24'
 					);
@@ -676,7 +676,11 @@
 			overlay: true,
 			closeOnClickOutside: false,
 			buttons: [ {
-				name: 'Congratulations!',
+				name: 'Check my badges',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/theUserscriptTourBadges' )
+			}, {
+				name: 'Congratulations to me!',
 				action: 'end'
 			} ],
 			allowAutomaticOkay: false
