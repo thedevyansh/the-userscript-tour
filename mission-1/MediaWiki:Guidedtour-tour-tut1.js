@@ -476,7 +476,7 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ),
+						'User:' + mw.config.get( 'wgUserName' ) + 'theUserscriptTourBadges',
 						'TUT/Badge/1template1',
 						mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=15'
 					);

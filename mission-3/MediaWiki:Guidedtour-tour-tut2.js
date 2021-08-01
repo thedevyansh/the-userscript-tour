@@ -823,7 +823,7 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ),
+						'User:' + mw.config.get( 'wgUserName' ) + 'theUserscriptTourBadges',
 						'TUT/Badge/3template1',
 						mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=30'
 					);
