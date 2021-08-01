@@ -304,7 +304,7 @@
 						return;
 					}
 					sendMessage(
-						'User talk:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
+						'User talk:' + mw.config.get( 'wgUserName' ),
 						'MediaWiki:TUT/Welcome',
 						mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=8'
 					);
