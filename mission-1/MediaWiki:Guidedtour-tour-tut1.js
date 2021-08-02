@@ -632,7 +632,7 @@
 		.step( {
 			name: '21',
 			title: 'Load the user script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Copy and paste above:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Copy and paste above:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',

@@ -595,7 +595,7 @@
 		.step( {
 			name: '20',
 			title: 'Load the script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case your common.js looks cluttered at this point, feel free to clear it up :)<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/userEditCount.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case your common.js looks cluttered at this point, feel free to clear it up :)<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/userEditCount.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',

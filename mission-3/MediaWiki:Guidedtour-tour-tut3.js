@@ -358,7 +358,7 @@
 		.step( {
 			name: '10',
 			title: 'Load the userscript',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case the page looks cluttered, you may consider clearing it a bit or entirely.<br><br>Now copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/basicPageInfo.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case the page looks cluttered, you may consider clearing it a bit or entirely.<br><br>Now copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/basicPageInfo.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -734,7 +734,7 @@
 		.step( {
 			name: '26',
 			title: 'Load Quick ChangeLog',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>http://localhost:8080/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
