@@ -25,7 +25,7 @@
  *
  * The above is the entire license notice for the JavaScript code in this Guided Tour.
  */
- ( function ( window, document, $, mw, gt ) {
+( function ( window, document, $, mw, gt ) {
 
 	// Defined the guided tour.
 	var tour = new gt.TourBuilder( {
@@ -357,7 +357,7 @@
 		.step( {
 			name: '10',
 			title: 'Load the userscript',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case the page looks cluttered, you may consider clearing it a bit or entirely.<br><br>Now copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https://mediawiki.org/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/basicPageInfo.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>In case the page looks cluttered, you may consider clearing it a bit or entirely.<br><br>Now copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/basicPageInfo.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -733,7 +733,7 @@
 		.step( {
 			name: '26',
 			title: 'Load Quick ChangeLog',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>(\'<nowiki>https://mediawiki.org/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\');<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -823,7 +823,7 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ) + 'theUserscriptTourBadges',
+						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/3template1',
 						mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=30'
 					);

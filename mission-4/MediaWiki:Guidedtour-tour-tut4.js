@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * Guidedtour-tour-tut4.js
  *
@@ -149,6 +148,7 @@
 		} );
 	}
 
+	// Step 1
 	tour
 		.firstStep( {
 			name: '1',
@@ -165,6 +165,7 @@
 		} )
 		.next( '2' );
 
+	// Step 2
 	tour
 		.step( {
 			name: '2',
@@ -185,6 +186,7 @@
 		} )
 		.next( '3' );
 
+	// Step 3
 	tour
 		.step( {
 			name: '3',
@@ -205,6 +207,7 @@
 		} )
 		.next( '4' );
 
+	// Step 4
 	tour
 		.step( {
 			name: '4',
@@ -225,6 +228,7 @@
 		} )
 		.next( '5' );
 
+	// Step 5
 	tour
 		.step( {
 			name: '5',
@@ -245,6 +249,7 @@
 		} )
 		.next( '6' );
 
+	// Step 6
 	tour
 		.step( {
 			name: '6',
@@ -266,6 +271,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 7
 	tour
 		.step( {
 			name: '7',
@@ -287,6 +293,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 8
 	tour
 		.step( {
 			name: '8',
@@ -313,6 +320,7 @@
 			}
 		} );
 
+	// Step 9
 	tour
 		.step( {
 			name: '9',
@@ -336,6 +344,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 10
 	tour
 		.step( {
 			name: '10',
@@ -359,11 +368,12 @@
 			}
 		} );
 
+	// Step 11
 	tour
 		.step( {
 			name: '11',
 			title: 'Load the userscript',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Chances are your common.js looks cluttered at this point. Feel free to clear it up first :)<br><br>Next, copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https://mediawiki.org/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/showAlertBox.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Chances are your common.js looks cluttered at this point. Feel free to clear it up first :)<br><br>Next, copy and paste the following at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/showAlertBox.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -381,6 +391,7 @@
 		} )
 		.next( '12' );
 
+	// Step 12
 	tour
 		.step( {
 			name: '12',
@@ -407,6 +418,7 @@
 			}
 		} );
 
+	// Step 13
 	tour
 		.step( {
 			name: '13',
@@ -430,6 +442,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 14
 	tour
 		.step( {
 			name: '14',
@@ -450,6 +463,7 @@
 		} )
 		.next( '15' );
 
+	// Step 15
 	tour
 		.step( {
 			name: '15',
@@ -476,6 +490,7 @@
 		} )
 		.next( '16' );
 
+	// Step 16
 	tour
 		.step( {
 			name: '16',
@@ -497,6 +512,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 17
 	tour
 		.step( {
 			name: '17',
@@ -518,6 +534,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 18
 	tour
 		.step( {
 			name: '18',
@@ -544,6 +561,7 @@
 			}
 		} );
 
+	// Step 19
 	tour
 		.step( {
 			name: '19',
@@ -567,11 +585,12 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 20
 	tour
 		.step( {
 			name: '20',
 			title: 'Load the script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Copy and paste the following at the end of common.js:<br><br><b>mw.loader.load</b>( \'<nowiki>https://mediawiki.org/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Copy and paste the following at the end of common.js:<br><br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -589,6 +608,7 @@
 		} )
 		.next( '21' );
 
+	// Step 21
 	tour
 		.step( {
 			name: '21',
@@ -615,6 +635,7 @@
 			}
 		} );
 
+	// Step 22
 	tour
 		.step( {
 			name: '22',
@@ -638,6 +659,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 23
 	tour
 		.step( {
 			name: '23',
@@ -658,7 +680,7 @@
 						return;
 					}
 					sendMessage(
-						'User:' + mw.config.get( 'wgUserName' ) + 'theUserscriptTourBadges',
+						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/4template1',
 						mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=24'
 					);
@@ -667,6 +689,7 @@
 			allowAutomaticOkay: false
 		} );
 
+	// Step 24
 	tour
 		.step( {
 			name: '24',
@@ -680,7 +703,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/theUserscriptTourBadges' )
 			}, {
-				name: 'Congratulations!',
+				name: 'Congratulations to me!',
 				action: 'end'
 			} ],
 			allowAutomaticOkay: false
