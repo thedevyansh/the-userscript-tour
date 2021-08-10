@@ -3,8 +3,7 @@
  *
  * It creates a guided tour for The Userscript Tour: Mission 4 (Novelty of OOUI).
  * The users are made familiar with Object-Oriented User Interface, how to easily create user
- * interfaces with OOUI, and  how to write userscripts using OOUI. Optionally, users can get to
- * know about promoting their userscripts to gadgets.
+ * interfaces and write userscripts using OOUI.
  *
  * The following is the entire license notice for the JavaScript code in this Guided Tour.
  *
@@ -170,7 +169,7 @@
 		.step( {
 			name: '2',
 			title: 'Object-Oriented User Interface',
-			description: '<br><div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>OOUI</b> (Object-Oriented User Interface) allows the creation of web user-interfaces and applications.<br><br>The OOUI library provides the building blocks for building an object-oriented user interface.<br><br>',
+			description: '<br><div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>OOUI</b> (Object-Oriented User Interface) allows the creation of web user-interfaces and widgets.<br><br>The OOUI library provides the building blocks for building an object-oriented user interface.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -191,7 +190,7 @@
 		.step( {
 			name: '3',
 			title: 'Features',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>1)</b> User interfaces created using OOUI abstracts away HTML markup entirely.<br><br><b>2)</b> It uses ready-to-use widgets, layouts, and windows that can be instantiated directly or easily extended.<br><br><b>3)</b> Elements in OOUI can be easily mixed and matched to create custom user interfaces.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br><b>1)</b> User interfaces created with OOUI generates HTML markup itself.<br><br><b>2)</b> It uses ready-to-use widgets, layouts, and windows that can be instantiated directly or easily extended.<br><br><b>3)</b> Elements in OOUI can be easily mixed and matched to create custom user interfaces.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -298,7 +297,7 @@
 		.step( {
 			name: '8',
 			title: 'Sneak Peek',
-			description: '<br>Go through the above script. The comments in the script explain it all.<br><br>Once done, edit summary and save the changes.<br><br>',
+			description: '<br>Go through the above script. The comments in the script explain it all.<br><br>Once done, edit summary and publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -325,7 +324,7 @@
 		.step( {
 			name: '9',
 			title: 'The Rationale',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>LOGIC:<br><br>1) The modules - <b>oojs-ui-core, oojs-ui-windows</b> are loaded before the code runs. These modules are required to add an OOUI button and alert dialog, respectively.<br><br>2) The button widget is created and added to the navigation section of the Portlet area.<br><br>3) A \'click event listener\' is added to the OOUI button. The event handler shows an alert when the button is clicked.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>LOGIC:<br><br>1) The module - <b>oojs-ui-core</b> is loaded before the code runs. This module is required to add an OOUI button and alert dialog.<br><br>2) The button widget is created and added to the toolbox section of the Portlet area.<br><br>3) A \'click event listener\' is added to the OOUI button. The event handler shows an alert when the button is clicked.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			attachTo: '#bodyContent',
@@ -395,8 +394,8 @@
 	tour
 		.step( {
 			name: '12',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Good work! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Good work! Before you click Publish Changes, leave a brief note about the changes you made.<br><br>Click PUBLISH CHANGES when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -539,7 +538,7 @@
 		.step( {
 			name: '18',
 			title: 'Sneak Peek',
-			description: '<br>The above script is well-documented. Try to understand the fundamental aspects of it.<br><br>Once done, edit summary and save the changes.<br><br>',
+			description: '<br>The above script is well-documented. Try to understand the fundamental aspects of it.<br><br>Once done, edit summary and publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -566,7 +565,7 @@
 		.step( {
 			name: '19',
 			title: 'The Rationale',
-			description: '<br><br>You may go through the comments in the above user script first. The LOGIC is explained below in brief:<br><br>1) A custom widget <b>RandomNumberWidget</b> is created by extending <b>OO.ui.Widget.</b><br><br>2) This custom widget mixes MessageWidget, LabelWidget, TextInputWidget, and ButtonWidget.<br><br>3) Methods - <b>onBtnClick, setGameOver,</b> and <b>setLabels</b> are created to define the behaviour when the user interacts with the widget.<br><br>4) Finally, the custom widget is instantiated and appended to DOM.<br>',
+			description: '<br><br>You may go through the comments in the above user script first. The LOGIC is explained below in brief:<br><br>1) A custom widget <b>RandomNumberWidget</b> is created by extending <b>OO.ui.Widget.</b><br><br>2) This custom widget mixes MessageWidget, LabelWidget, TextInputWidget, and ButtonWidget.<br><br>3) Methods - <b>onBtnClick, setGameOver,</b> and <b>setLabels</b> are created to define the behaviour when the user interacts with the widget.<br><br>4) Finally, the custom widget is instantiated and prepended to the DOM.<br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			attachTo: '#bodyContent',
@@ -612,8 +611,8 @@
 	tour
 		.step( {
 			name: '21',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Perfect! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Perfect! Before you click Publish Changes, leave a brief note about the changes you made.<br><br>Click PUBLISH CHANGES when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -673,7 +672,32 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=22'
 			}, {
-				name: 'Thanks*',
+				name: 'Thanks',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '24' );
+
+	// Step 24
+	tour
+		.step( {
+			name: '24',
+			title: 'Save the badge',
+			description: '<div class="center">[[File:TUT badge 4.png|110px|link=]]</div><br>Do you want to save this badge in your subpage?<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut4&step=23'
+			}, {
+				name: 'Don\'t save',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=25'
+			}, {
+				name: 'Save the badge',
 				onclick: function () {
 					if ( !mw.config.get( 'wgUserName' ) ) {
 						showAlert( 'Please login', 'Please login to continue on the tour.' );
@@ -682,17 +706,17 @@
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/4template1',
-						mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=24'
+						mw.util.getUrl( 'TUT/4/End' ) + '?tour=tut4&step=25'
 					);
 				}
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 24
+	// Step 25
 	tour
 		.step( {
-			name: '24',
+			name: '25',
 			title: 'Mission 4 complete!',
 			description: '<div align="center">[[File:TWA fireworks6.png|120px|link=]]</div><br>This concludes Mission 4 and with it, The Userscript Tour. You are now equipped with the fundamental constructs required to write creative user scripts.<br><br>So, what are you waiting for? Happy contributing to MediaWiki :)<br><br>',
 			onShow: gt.parseDescription,
@@ -703,7 +727,7 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/theUserscriptTourBadges' )
 			}, {
-				name: 'Congratulations to me!',
+				name: 'Congrats me!',
 				action: 'end'
 			} ],
 			allowAutomaticOkay: false
