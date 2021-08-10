@@ -191,7 +191,7 @@
 		.step( {
 			name: '3',
 			title: 'Are these resources requested separately?',
-			description: '<br>These resources are not requested separately.<br><br>Please welcome <b>MODULES!</b><br><br><div align="center">[[File:TUT module.png|400px|link=]]</div><br>',
+			description: '<br>These resources are not requested separately.<br><br>Please welcome <b>MODULES!</b><br><br><div align="center">[[File:TUT modules.png|400px|link=]]</div><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -322,8 +322,8 @@
 	tour
 		.step( {
 			name: '9',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Nice! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Nice! Before you click Publish Changes, leave a brief note about the changes you made.<br><br>Click PUBLISH CHANGES when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -483,7 +483,7 @@
 			}, {
 				name: 'Check all modules',
 				action: 'externalLink',
-				url: 'https://www.mediawiki.org/wiki/ResourceLoader/Core_modules?tour=tut2&step=16'
+				url: mw.util.getUrl( 'ResourceLoader/Core_modules' ) + '?tour=tut2&step=16'
 			}, {
 				name: 'Continue',
 				type: 'progressive',
@@ -544,7 +544,7 @@
 		.step( {
 			name: '18',
 			title: 'Check it out',
-			description: '<br>You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this tiny script and when done, edit summary and save the changes.<br><br>',
+			description: '<br>You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this tiny script and when done, edit summary and publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -617,8 +617,8 @@
 	tour
 		.step( {
 			name: '21',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Great! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Save Changes when you\'re ready.<br><br>',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Great! Before you click Publish Changes, leave a brief note about the changes you made.<br><br>Click Publish Changes when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -678,7 +678,32 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=22'
 			}, {
-				name: 'Thanks*',
+				name: 'Thanks',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '24' );
+
+	// Step 24
+	tour
+		.step( {
+			name: '24',
+			title: 'Save the badge',
+			description: '<div class="center">[[File:TUT badge 2.png|110px|link=]]</div><br>Do you want to save this badge in your subpage?<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=23'
+			}, {
+				name: 'Don\'t save',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/2/End' ) + '?tour=tut2&step=25'
+			}, {
+				name: 'Save the badge',
 				onclick: function () {
 					if ( !mw.config.get( 'wgUserName' ) ) {
 						showAlert( 'Please login', 'Please login to continue on the tour.' );
@@ -687,17 +712,17 @@
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/2template1',
-						mw.util.getUrl( 'TUT/2/End' ) + '?tour=tut2&step=24'
+						mw.util.getUrl( 'TUT/2/End' ) + '?tour=tut2&step=25'
 					);
 				}
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 24
+	// Step 25
 	tour
 		.step( {
-			name: '24',
+			name: '25',
 			title: 'Mission 2 complete!',
 			description: '<br>This concludes <b>Mission 2.</b><br><br>You\'re all set for your journey on <b>Mission 3:</b> Strengths of the Action API<br><br>',
 			onShow: gt.parseDescription,
