@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * Guidedtour-tour-tut3.js
  *
@@ -283,7 +282,7 @@
 		.step( {
 			name: '7',
 			title: 'Sneak Peek',
-			description: '<br>Go through the comments in the above user script. The concepts are explained well.<br><br>Once done, edit the summary and save changes.<br><br>',
+			description: '<br>Go through the comments in the above user script. The concepts are explained well.<br><br>Once done, edit the summary and publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -380,8 +379,8 @@
 	tour
 		.step( {
 			name: '11',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Nice! Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click SAVE CHANGES when you\'re ready.<br><br>',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Nice! Before you click Publish Changes, leave a brief note about the changes you made.<br><br>Click PUBLISH CHANGES when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -453,7 +452,7 @@
 		.step( {
 			name: '14',
 			title: 'Module, submodule, parameter',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Consider the following request:<br><b>api.php ? action=query & prop=info & titles=API:Main_page & format=json</b><br><br>here:<br><br>1) <code>action</code> is a parameter of the main module.<br>2) <code>action=query</code> is another module.<br>3) <code>prop</code> and <code>titles</code> are parameters of the query module.<br>4) <code>format</code> is a parameter of the main module.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Consider the following request:<br><b>api.php ? action=query & prop=info & titles=API:Main_page & format=json</b><br><br>here:<br><br>1) <code>action</code> is a parameter of the main module.<br>2) <code>action=query</code> is another module called the query module.<br>3) <code>prop</code> and <code>titles</code> are parameters of the query module.<br>4) <code>format</code> is a parameter of the main module.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -474,7 +473,7 @@
 		.step( {
 			name: '15',
 			title: 'Where to go for reference?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is big. To work out your API request:<br><br>In the sidebar of the <b>API:Main_page</b>, look for the feature you wish to implement and follow the link for information about which modules to call.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>The MediaWiki Action API is big. To work out your API request:<br><br>In the sidebar of the API:Main_page, look for the feature you wish to implement and follow the link for information about which modules to call.<br><br>Check out <b>[https://www.mediawiki.org/wiki/API:Main_page?tour=tut3&step=16 API:Main_page]</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -483,28 +482,19 @@
 				action: 'externalLink',
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=14'
 			}, {
-				name: 'API:Main_page',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'API:Main_page' ) + '?tour=tut3&step=16'
-			}, {
-				name: 'API Sandbox',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:ApiSandbox' ) + '?tour=tut3&step=17'
-			}, {
-				name: 'Next',
-				type: 'progressive',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
+				name: 'What\'s next',
+				action: 'next'
 			} ],
 			allowAutomaticOkay: false
-		} );
+		} )
+		.next( '17' );
 
 	// Step 16
 	tour
 		.step( {
 			name: '16',
 			title: 'Lots of use cases!',
-			description: '<br>You may look for the feature you wish to implement using the API from the pool of features in the sidebar.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>You may look for the feature you wish to implement using the API from the pool of features in the sidebar.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.vertical-navbox',
 			position: 'leftTop',
@@ -516,19 +506,18 @@
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=15'
 			}, {
 				name: 'Continue on the tour',
-				type: 'progressive',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
+				action: 'next'
 			} ],
 			allowAutomaticOkay: false
-		} );
+		} )
+		.next( '17' );
 
 	// Step 17
 	tour
 		.step( {
 			name: '17',
 			title: 'API Sandbox',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Welcome to the API Sandbox!<br><br>It is used to test and experiment with the Action API. Note that, although this is a sandbox, actions you carry out on this page may modify the wiki.<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>API Sandbox is used to test and experiment with the MediaWiki Action API. Note that, although this is a sandbox, actions you carry out on this page may modify the wiki.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -538,128 +527,23 @@
 				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=15'
 			}, {
 				name: 'Play with the sandbox',
-				action: 'next'
+				type: 'neutral',
+				onclick: function () {
+					window.open( 'https://en.wikipedia.org/wiki/Special:ApiSandbox', '_blank' );
+				}
+			}, {
+				name: 'Next',
+				type: 'progressive',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=18'
 			} ],
 			allowAutomaticOkay: false
-		} )
-		.next( '18' );
+		} );
 
 	// Step 18
 	tour
 		.step( {
 			name: '18',
-			title: 'main module',
-			description: '<br>This is the main module with available parameters.<br><br>Choose <b>"query"</b> from the dropdown corresponding to the parameter <b>"action"</b>, below.<br><br>',
-			onShow: gt.parseDescription,
-			overlay: false,
-			attachTo: '#mw-head',
-			position: 'bottom',
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'back'
-			}, {
-				name: 'Selected query module',
-				action: 'next'
-			} ],
-			allowAutomaticOkay: false
-		} )
-		.back( '17' )
-		.next( '19' );
-
-	// Step 19
-	tour
-		.step( {
-			name: '19',
-			title: 'action=query',
-			description: '<br>Next, select <b>action=query</b> from the sidebar.<br><br>',
-			onShow: gt.parseDescription,
-			overlay: false,
-			attachTo: '.oo-ui-menuLayout-menu',
-			position: 'rightTop',
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'back'
-			}, {
-				name: 'Done',
-				action: 'next'
-			} ],
-			allowAutomaticOkay: false
-		} )
-		.back( '18' )
-		.next( '20' );
-
-	// Step 20
-	tour
-		.step( {
-			name: '20',
-			title: 'query module',
-			description: '<br>This is the query module with available parameters.<br><br><b>1)</b> Select <b>"info"</b> from the dropdown corresponding to the parameter- <b>prop</b><br><b>2)</b> Type <b>API:Main_page</b> in the field corresponding to the parameter- <b>titles</b><br>',
-			onShow: gt.parseDescription,
-			overlay: false,
-			attachTo: '#mw-head',
-			position: 'bottom',
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'back'
-			}, {
-				name: 'Selected',
-				action: 'next'
-			} ],
-			allowAutomaticOkay: false
-		} )
-		.back( '19' )
-		.next( '21' );
-
-	// Step 21
-	tour
-		.step( {
-			name: '21',
-			title: 'Make request',
-			description: '<br>Once done, click MAKE REQUEST to send the API request.<br>',
-			onShow: gt.parseDescription,
-			overlay: false,
-			attachTo: '.mw-apisandbox-toolbar',
-			position: 'bottomRight',
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'back'
-			} ],
-			allowAutomaticOkay: false
-		} )
-		.back( '20' );
-
-	// Step 22
-	tour
-		.step( {
-			name: '22',
-			title: 'API response',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Here\'s the response from the server!<br><br>In the similar manner, you can test your API requests using different combinations of modules, submodules, and parameters.<br><br>',
-			onShow: gt.parseDescription,
-			overlay: false,
-			attachTo: '.api-pretty-content',
-			position: 'bottom',
-			closeOnClickOutside: false,
-			buttons: [ {
-				name: '<big>←</big>',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:ApiSandbox' ) + '?tour=tut3&step=17'
-			}, {
-				name: 'That is cool',
-				type: 'progressive',
-				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
-			} ],
-			allowAutomaticOkay: false
-		} );
-
-	// Step 23
-	tour
-		.step( {
-			name: '23',
 			title: 'Your subpage',
 			description: '<br>You’ll now put everything you have learned so far into action in the subpage - <b>User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js</b>.<br><br>The next user script shows a dialog with up to 25 recent edits on the entire wiki!<br><br>',
 			onShow: gt.parseDescription,
@@ -668,22 +552,22 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=15'
+				url: mw.util.getUrl( 'TUT/3/Start' ) + '?tour=tut3&step=17'
 			}, {
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=24&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=19&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 24
+	// Step 19
 	tour
 		.step( {
-			name: '24',
+			name: '19',
 			title: 'Check it out',
-			description: '<br>The above user script combines the <b>crux</b> of the ongoing as well as previous missions.<br><br>Have a good look at this script and when done, edit summary and save the changes.<br><br>',
+			description: '<br>The above user script combines the <b>crux</b> of the ongoing as well as previous missions.<br><br>Have a good look at this script and when done, edit summary and publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -694,21 +578,21 @@
 					[ {
 						name: '<big>←</big>',
 						action: 'externalLink',
-						url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=23'
+						url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=18'
 					} ] :
 					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
 			if ( gt.isPostEdit() ) {
-				return '25';
+				return '20';
 			}
 		} );
 
-	// Step 25
+	// Step 20
 	tour
 		.step( {
-			name: '25',
+			name: '20',
 			title: 'The Rationale',
 			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>LOGIC:<br><br><b>1.</b> The required modules are called.<br><b>2.</b> When the page is fully loaded, a new link is added to the Portlet area.<br><b>3. quickRC()</b> fetches the recent changes using the Action API and passes the data to renderQuickRCDialog().<br><b>4. renderQuickRCDialog()</b> pops up a dialog when the QUICK CHANGELOG link in the toolbox is clicked. The dialog contains the recent changes.<br><br>',
 			onShow: gt.parseDescription,
@@ -719,20 +603,20 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=24&action=edit'
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=19&action=edit'
 			}, {
 				name: 'Let\'s head to common.js',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=26&action=edit'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=21&action=edit'
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 26
+	// Step 21
 	tour
 		.step( {
-			name: '26',
+			name: '21',
 			title: 'Load Quick ChangeLog',
 			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Feel free to clear common.js first, if it looks cluttered.<br><br>Now copy and paste at the very end:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/quickChangeLog.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
@@ -743,21 +627,21 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=25'
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=20'
 			}, {
 				name: 'Copied and Pasted!',
 				action: 'next'
 			} ],
 			allowAutomaticOkay: false
 		} )
-		.next( '27' );
+		.next( '22' );
 
-	// Step 27
+	// Step 22
 	tour
 		.step( {
-			name: '27',
-			title: 'Edit summary and Save Changes',
-			description: '<br>Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Save Changes when you\'re ready.<br><br>',
+			name: '22',
+			title: 'Edit summary and Publish Changes',
+			description: '<br>Before you click Save Changes, leave a brief note about the changes you made.<br><br>Click Publish Changes when you\'re ready.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -768,21 +652,21 @@
 					[ {
 						name: '<big>←</big>',
 						action: 'externalLink',
-						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=26&action=edit'
+						url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=21&action=edit'
 					} ] :
 					postEditButtons,
 			allowAutomaticOkay: false
 		} )
 		.transition( function () {
 			if ( gt.isPostEdit() ) {
-				return '28';
+				return '23';
 			}
 		} );
 
-	// Step 28
+	// Step 23
 	tour
 		.step( {
-			name: '28',
+			name: '23',
 			title: 'Play around',
 			description: '<br>Click the QUICK CHANGELOG link in the toolbox.<br><br>Bypass your cache if the changes are not visible to you.<br><br>',
 			onShow: gt.parseDescription,
@@ -793,20 +677,20 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=27&action=edit'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=22&action=edit'
 			}, {
 				name: 'Legit',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=29'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=24'
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 29
+	// Step 24
 	tour
 		.step( {
-			name: '29',
+			name: '24',
 			title: 'Congrats!',
 			description: 'New badge earned: <b>ONE FRONTIER TO GO</b><div class="center">[[File:TUT badge 3.png|110px|link=]]</div><br>Brilliant work! Take your time to pat on your shoulder for coming this far.<br>',
 			onShow: gt.parseDescription,
@@ -815,9 +699,34 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=28'
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=23'
 			}, {
-				name: 'Thanks*',
+				name: 'Thanks',
+				action: 'next'
+			} ],
+			allowAutomaticOkay: false
+		} )
+		.next( '25' );
+
+	// Step 25
+	tour
+		.step( {
+			name: '25',
+			title: 'Save the badge',
+			description: '<div class="center">[[File:TUT badge 3.png|110px|link=]]</div><br>Do you want to save this badge in your subpage?<br><br>',
+			onShow: gt.parseDescription,
+			overlay: true,
+			closeOnClickOutside: false,
+			buttons: [ {
+				name: '<big>←</big>',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut3&step=24'
+			}, {
+				name: 'Don\'t save',
+				action: 'externalLink',
+				url: mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=26'
+			}, {
+				name: 'Save the badge',
 				onclick: function () {
 					if ( !mw.config.get( 'wgUserName' ) ) {
 						showAlert( 'Please login', 'Please login to continue on the tour.' );
@@ -826,17 +735,17 @@
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
 						'TUT/Badge/3template1',
-						mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=30'
+						mw.util.getUrl( 'TUT/3/End' ) + '?tour=tut3&step=26'
 					);
 				}
 			} ],
 			allowAutomaticOkay: false
 		} );
 
-	// Step 30
+	// Step 26
 	tour
 		.step( {
-			name: '30',
+			name: '26',
 			title: 'Mission 3 complete!',
 			description: '<br>This concludes <b>Mission 3.</b><br><br>You\'re all set for your journey on <b>Mission 4:</b> Novelty of OOUI<br><br>',
 			onShow: gt.parseDescription,

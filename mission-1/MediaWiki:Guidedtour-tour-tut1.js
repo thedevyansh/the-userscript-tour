@@ -152,7 +152,7 @@
 		.firstStep( {
 			name: '1',
 			title: 'Welcome to The Userscript Tour',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>We\'re so thrilled to have you! There\'s a ton of things to know about <b>user scripts</b>.<br><br>Don\'t worry, the learnings would be facilitated using interactive missions, each designed to help you get well-versed with the various aspects of user scripts.<br><br>The missions are constructed such that each one of them builds on its preceding missions in one or the other way.<br><br><b>Let\'s have some fun :)</b><br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>We\'re so thrilled to have you! There\'s a ton of things to know about <b>user scripts</b>.<br><br>The learnings would be facilitated using interactive missions, each designed to help you get well-versed with the various aspects of user scripts.<br><br>The missions are constructed such that each one of them builds on its preceding missions in one or the other way.<br><br><b>Let\'s have some fun :)</b><br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
