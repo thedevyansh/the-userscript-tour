@@ -117,7 +117,9 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: 'New Message (simulated automatically as part of [[The Userscript Tour]])',
+						summary: msgPage === 'User:Novusistic/TUT_toggleFontColor.js' ?
+							'Create a userscript (to toggle font color) in common.js as part of [[The Userscript Tour]].' :
+							'A badge sent as part of [[|The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
@@ -534,7 +536,7 @@
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=18&action=edit&preload=User:Novusistic/TUT_userEditCount.js'
+				url: mw.util.getUrl( 'Special:MyPage/userEditCount.js' ) + '?tour=tut2&step=18&action=edit&preload=User:Novusistic/TUT_userEditCount.js&summary=Created a userscript to show edit count of user.'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -544,7 +546,7 @@
 		.step( {
 			name: '18',
 			title: 'Check it out',
-			description: '<br>You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this tiny script and when done, edit summary and publish the changes.<br><br>',
+			description: '<br>You may refer to the <b>core modules</b> anytime.<br><br>Have a look at this tiny script and when done, publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
