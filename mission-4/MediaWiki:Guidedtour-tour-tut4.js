@@ -116,7 +116,7 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: 'New Message (simulated automatically as part of [[The Userscript Tour]])',
+						summary: 'A badge sent as part of [[The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
@@ -287,7 +287,7 @@
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/showAlertBox.js' ) + '?tour=tut4&step=8&action=edit&preload=User:Novusistic/TUT_showAlertBox.js'
+				url: mw.util.getUrl( 'Special:MyPage/showAlertBox.js' ) + '?tour=tut4&step=8&action=edit&preload=User:Novusistic/TUT_showAlertBox.js&summary=Created a userscript to show an alert on clicking a button.'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -297,7 +297,7 @@
 		.step( {
 			name: '8',
 			title: 'Sneak Peek',
-			description: '<br>Go through the above script. The comments in the script explain it all.<br><br>Once done, edit summary and publish the changes.<br><br>',
+			description: '<br>Go through the above script. The comments in the script explain it all.<br><br>Once done, publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -528,7 +528,7 @@
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=18&action=edit&preload=User:Novusistic/TUT_guessRandomNumber.js'
+				url: mw.util.getUrl( 'Special:MyPage/guessRandomNumber.js' ) + '?tour=tut4&step=18&action=edit&preload=User:Novusistic/TUT_guessRandomNumber.js&summary=Created a userscript to show a random number guessing game.'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -538,7 +538,7 @@
 		.step( {
 			name: '18',
 			title: 'Sneak Peek',
-			description: '<br>The above script is well-documented. Try to understand the fundamental aspects of it.<br><br>Once done, edit summary and publish the changes.<br><br>',
+			description: '<br>The above script is well-documented. Try to understand the fundamental aspects of it.<br><br>Once done, publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
