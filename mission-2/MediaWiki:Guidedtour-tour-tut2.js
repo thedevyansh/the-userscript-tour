@@ -193,7 +193,7 @@
 		.step( {
 			name: '3',
 			title: 'Are these resources requested separately?',
-			description: '<br>These resources are not requested separately.<br><br>Please welcome <b>MODULES!</b><br><br><div align="center">[[File:TUT modules.png|400px|link=]]</div><br>',
+			description: '<br>These resources are not requested separately.<br><br>Please welcome <b>MODULES!</b><br><br><div align="center">[[File:ResourceLoader OSCON 2011.pdf|page=15|400px|link=]]</div><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,
@@ -720,6 +720,7 @@
 			} ],
 			allowAutomaticOkay: false
 		} );
+
 
 	// Step 25
 	tour

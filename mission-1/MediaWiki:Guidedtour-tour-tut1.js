@@ -116,9 +116,9 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: msgPage === 'MediaWiki:TUT/Welcome' ?
-							'Welcome message sent as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]].' :
-							'A badge sent as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]].',
+						summary: msgPage === 'TUT/Welcome' ?
+							'Welcome message sent as part of [[The Userscript Tour]].' :
+							'A badge sent as part of [[The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
@@ -178,7 +178,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=1'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=1'
 			}, {
 				name: 'Yeah, understood',
 				action: 'next'
@@ -199,7 +199,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=2'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=2'
 			}, {
 				name: 'And gadgets?',
 				action: 'next'
@@ -220,7 +220,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=3'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=3'
 			}, {
 				name: 'Where is a user script written?',
 				action: 'next'
@@ -241,7 +241,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=4'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=4'
 			}, {
 				name: 'Hmm, alright',
 				action: 'next'
@@ -262,7 +262,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=5'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=5'
 			}, {
 				name: 'I\'m logged in',
 				type: 'neutral',
@@ -271,16 +271,16 @@
 						showAlert( 'Please login', 'Please login to continue on the tour.' );
 						return;
 					}
-					window.location.href = mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=7';
+					window.location.href = mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=7';
 				}
 			}, {
 				name: 'I need to login',
 				action: 'externalLink',
-				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=MediaWiki:TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7'
+				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7'
 			}, {
 				name: 'Register!',
 				action: 'externalLink',
-				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=MediaWiki:TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7%26showGettingStarted%3Dfalse&type=signup'
+				url: mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) + '/index.php?title=Special:UserLogin&returnto=TUT/1/Start&returntoquery=tour%3Dtut1%26step%3D7%26showGettingStarted%3Dfalse&type=signup'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -297,7 +297,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=5'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=5'
 			}, {
 				name: 'Say hello to your common.js*',
 				onclick: function () {
@@ -307,7 +307,7 @@
 					}
 					sendMessage(
 						'User talk:' + mw.config.get( 'wgUserName' ),
-						'MediaWiki:TUT/Welcome',
+						'TUT/Welcome',
 						mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut1&step=8'
 					);
 				}
@@ -327,12 +327,12 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=7'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=7'
 			}, {
 				name: 'Let\'s do this',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
+				url: mw.util.getUrl( 'TUT/1/Userscript1' ) + '?tour=tut1&step=9'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -375,7 +375,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Userscript1' ) + '?tour=tut1&step=9'
+				url: mw.util.getUrl( 'TUT/1/Userscript1' ) + '?tour=tut1&step=9'
 			} ],
 			allowAutomaticOkay: false
 		} )
@@ -452,7 +452,7 @@
 				name: 'That\'s pretty cool',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=14'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=14'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -490,11 +490,11 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=14'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=14'
 			}, {
 				name: 'Don\'t save',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=16'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=16'
 			}, {
 				name: 'Save the badge',
 				onclick: function () {
@@ -504,8 +504,8 @@
 					}
 					sendMessage(
 						'User:' + mw.config.get( 'wgUserName' ) + '/theUserscriptTourBadges',
-						'MediaWiki:TUT/Badge/1template1',
-						mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=16'
+						'TUT/Badge/1template1',
+						mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=16'
 					);
 				}
 			} ],
@@ -524,7 +524,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=15'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=15'
 			}, {
 				name: 'Seems good',
 				type: 'progressive',
@@ -546,7 +546,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/Start' ) + '?tour=tut1&step=16'
+				url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=16'
 			}, {
 				name: 'Why not?',
 				type: 'progressive',
@@ -709,7 +709,7 @@
 		.step( {
 			name: '24',
 			title: 'You are impressive!',
-			description: '<br><div align="center">[[File:TUT fireworks small.png|100px|link=]]</div><br>Check out the <b>two magnifying glass buttons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
+			description: '<br><div align="center">[[File:TWA fireworks small.png|100px|link=]]</div><br>Check out the <b>two magnifying glass buttons</b> on the right of the article page. If they are not visible, consider bypassing the cache.<br><br>It\'s striking to see your pace of experiential learning! Keep up the good work.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			closeOnClickOutside: false,
@@ -721,7 +721,7 @@
 				name: 'Where to go next?',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'MediaWiki:TUT/1/End' ) + '?tour=tut1&step=25'
+				url: mw.util.getUrl( 'TUT/1/End' ) + '?tour=tut1&step=25'
 			} ],
 			allowAutomaticOkay: false
 		} );
