@@ -119,7 +119,7 @@
 						appendtext: '\n' + text,
 						summary: msgPage === 'User:Novusistic/TUT_toggleFontColor.js' ?
 							'Create a userscript (to toggle font color) in common.js as part of [[The Userscript Tour]].' :
-							'A badge sent as part of [[|The Userscript Tour]].',
+							'A badge sent as part of [[The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
