@@ -116,7 +116,9 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: 'New Message (simulated automatically as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]])',
+						summary: msgPage === 'MediaWiki:TUT/Welcome' ?
+							'Welcome message sent as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]].' :
+							'A badge sent as part of [[MediaWiki:The Userscript Tour|The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
@@ -609,7 +611,7 @@
 		.step( {
 			name: '20',
 			title: 'What\'s next?',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Do you think our task is over?<br>We haven\'t yet LOADED the user script in our common.js. So, let\'s head back to our common.js.<br><br><br><b>P.S.</b>If you recall, we loaded our first script using a similar argument. That\'s how you create user scripts in your user subpage and share them with the community.<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>Do you think our task is over?<br>We haven\'t yet LOADED the user script in our common.js. So, let\'s head back to our common.js.<br><br><br><b>P.S. </b>If you recall, we loaded our first script using a similar argument. That\'s how you create user scripts in your user subpage and share them with the community.<br><br>',
 			onShow: gt.parseDescription,
 			overlay: false,
 			attachTo: '#bodyContent',
