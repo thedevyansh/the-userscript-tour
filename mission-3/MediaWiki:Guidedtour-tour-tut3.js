@@ -116,7 +116,7 @@
 						action: 'edit',
 						title: targetPage,
 						appendtext: '\n' + text,
-						summary: 'New Message (simulated automatically as part of [[The Userscript Tour]])',
+						summary: 'A badge sent as part of [[The Userscript Tour]].',
 						token: csrfToken
 					} )
 					.done( function () {
@@ -272,7 +272,7 @@
 				name: 'Sure',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/basicPageInfo.js' ) + '?tour=tut3&step=7&action=edit&preload=User:Novusistic/TUT_basicPageInfo.js'
+				url: mw.util.getUrl( 'Special:MyPage/basicPageInfo.js' ) + '?tour=tut3&step=7&action=edit&preload=User:Novusistic/TUT_basicPageInfo.js&summary=Created a userscript to display number of bytes on every page.'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -282,7 +282,7 @@
 		.step( {
 			name: '7',
 			title: 'Sneak Peek',
-			description: '<br>Go through the comments in the above user script. The concepts are explained well.<br><br>Once done, edit the summary and publish the changes.<br><br>',
+			description: '<br>Go through the comments in the above user script. The concepts are explained well.<br><br>Once done, publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
@@ -557,7 +557,7 @@
 				name: 'Okay',
 				type: 'progressive',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=19&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js'
+				url: mw.util.getUrl( 'Special:MyPage/quickChangeLog.js' ) + '?tour=tut3&step=19&action=edit&preload=User:Novusistic/TUT_quickChangeLog.js&summary=Created a userscript to show atmost 25 recent changes.'
 			} ],
 			allowAutomaticOkay: false
 		} );
@@ -567,7 +567,7 @@
 		.step( {
 			name: '19',
 			title: 'Check it out',
-			description: '<br>The above user script combines the <b>crux</b> of the ongoing as well as previous missions.<br><br>Have a good look at this script and when done, edit summary and publish the changes.<br><br>',
+			description: '<br>The above user script combines the <b>crux</b> of the ongoing as well as previous missions.<br><br>Have a good look at this script and when done, publish the changes.<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '#wpSave',
 			position: 'bottomRight',
