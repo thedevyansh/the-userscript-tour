@@ -1,0 +1,5 @@
+{{#ifeq: {{{message|}}}| |  |
+<div style="background-color: #FFFFFF; color: #656565; border: 2px solid #4740A8; padding: 1em; font-family: arial, sans serif; font-size: 1.2em; float:left; border-radius: .5em; width: {{#if: {{{width|}}}|{{{width}}}|}};">
+{{#if: {{{message|}}}|{{{message}}}|}}
+</div>
+}}

@@ -1,0 +1,9 @@
+<div style="font-family: 'futura', arial, sans serif; border: 2px dotted #000000; border-radius: 0.5em; padding: 2em 2em 2em 4em; margin-top: 1em;">
+[[File:Info icon.png|40px|link=]]
+<span style="font-size: 1.6em; margin-left: 0.2em;">'''Know before you start'''</span><br><br>
+* '''Prerequisites:''' You should be familiar with the programming language that user scripts are written in i.e., '''JavaScript.''' It's also preferable to have some understanding of '''jQuery.'''
+*  As part of the tour, you will send some messages to your own MediaWiki user pages automatically.<br>
+* This tour '''only''' uses the Source Editor. If you use the Visual Editor or have it enabled it won't work yet.<br>
+* You need JavaScript enabled for the tour to work properly. If you're using Internet Explorer, you need to be updated to IE 10.<br>
+* The tour is not supported on tablets and smaller mobile devices.
+</div>

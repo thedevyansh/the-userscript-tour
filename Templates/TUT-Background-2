@@ -1,0 +1,15 @@
+{{Hidden title}}<div class="plainlinks" style="background: linear-gradient(to top left, #539ED8, #4740A8); color: #FFF; font-family: 'futura', arial, sans serif; border-radius: 0.5em;">
+<div style="padding: 3em 0em 0em 3em;">
+{{:TUT/Logo/2}}
+<div style="margin: 0em 0em 0em 12em;">
+{{:TUT/Message/1
+| message =  {{#if: {{{message|}}} | {{{message}}} | }}
+}}
+<div style="float:right; margin: 2em 8% 0 0;">
+{{#ifeq: {{{status}}} | yes | {{:TUT/Status|mission1={{{mission1}}}|mission2={{{mission2}}}|mission3={{{mission3}}}|mission4={{{mission4}}} }} | }}</div>
+{{clear}}
+</div>
+</div>
+<div style="margin: 10em 3em;">[[File:TUT spots.png|500px|right|link=]]</div>
+<div style="width: 100%; text-align: center;">{{:TUT/Navigation}}</div>
+</div>

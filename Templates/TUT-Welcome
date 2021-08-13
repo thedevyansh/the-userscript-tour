@@ -1,0 +1,13 @@
+== The Userscript Tour ==
+<div style="padding: 2em; border: medium solid #4740A8;">
+[[File:TUT ninja developer.png|right|220px|link=]]
+<span style="color: #539ED8; font-size: 180%;">'''Welcome to [[MediaWiki:The Userscript Tour|<span style="color: #539ED8; ">The Userscript Tour</span>]]!'''</span>
+<br />
+<br />
+'''Hi mate!''' We're so delighted you wanted to play, to unveil the realm of userscripts. Trust us, you are sure to appreciate the power and flexibility of userscripts in no time! The Tour is divided into four missions, each with its own goals to help you implement userscripts with fundamental constructs incrementally.
+
+
+Together these ''recipes of development'' aid you build cool JavaScript programs to change the very appearance and behaviour of your user account :)
+
+{{:TUT/Navigation1}}
+</div>

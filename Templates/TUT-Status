@@ -1,0 +1,55 @@
+<noinclude><div style="background-color: #539ED8; color: #FFF; font-family: 'futura', arial, sans serif; padding: 3em"></noinclude>
+:'''MISSIONS COMPLETED''' 
+{| 
+|-
+| 
+{| style="padding: .5em;"
+|-
+| style="background: transparent; border: 4px solid #4740A8; width: 1.5em; height: 8em; border-radius: 1em;"|
+{|
+|-
+| style="{{#if: {{{mission1|}}}|background-color: #4740A8; border: 1px solid #4740A8; width: 1.5em;| }}{{#switch:{{{mission1}}}
+| 1 = height: 7.5em; border-radius: 1em;
+}}|
+|}
+|}
+|
+{| style="padding: .5em;"
+|-
+| style="background: transparent; border: 4px solid #4740A8; width: 1.5em; height: 8em; border-radius: 1em;"|
+{|
+|-
+| style="{{#if: {{{mission2|}}}|background-color: #4740A8; border: 1px solid #4740A8; width: 1.5em;| }}{{#switch:{{{mission2}}}
+| 1 = height: 7.5em; border-radius: 1em;
+}}|
+|}
+|}
+|
+{| style="padding: .5em;"
+|-
+| style="background: transparent; border: 4px solid #4740A8; width: 1.5em; height: 8em; border-radius: 1em;"|
+{|
+|-
+| style="{{#if: {{{mission3|}}}|background-color: #4740A8; border: 1px solid #4740A8; width: 1.5em;| }}{{#switch:{{{mission3}}}
+| 1 = height: 7.5em; border-radius: 1em;
+}}|
+|}
+|}
+|
+{| style="padding: .5em;"
+|-
+| style="background: transparent; border: 4px solid #4740A8; width: 1.5em; height: 8em; border-radius: 1em;"|
+{|
+|-
+| style="{{#if: {{{mission4|}}}|background-color: #4740A8; border: 1px solid #4740A8; width: 1.5em;| }}{{#switch:{{{mission4}}}
+| 1 = height: 7.5em; border-radius: 1em;
+}}|
+|}
+|}
+|- align="center"
+| '''1'''
+| '''2'''
+| '''3'''
+| '''4'''
+|}
+<noinclude></div></noinclude>

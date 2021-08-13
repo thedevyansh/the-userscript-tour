@@ -1,0 +1,11 @@
+{{Hidden title}}<div style="background: linear-gradient(to top left, #539ED8, #4740A8); color: #FFFFFF; font-family: 'futura', arial, sans serif; border-radius: .5em;">
+<div style="padding: 2em">
+{{:TUT/Logo/3}}
+{{clear}}
+<br>
+{{#if: {{{challengeHeading|}}} | {{{challengeHeading}}} | }}
+<div id="tutMessageBox1" style="background-color: #FFFFFF; color: #656565; border: 2px solid #4740A8; padding: 3em; font-family: 'futura', arial, sans serif; font-size: 1.2em; width: 80%; margin: auto; margin-top: 4em; margin-bottom: 16em; border-radius: .5em;">
+{{{message|}}}
+</div></div>
+<div style="width: 100%; text-align: center;">{{:TUT/Navigation}}</div>
+</div>

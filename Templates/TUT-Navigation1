@@ -1,0 +1,12 @@
+{| class="plainlinks" style ="padding: 2em 0em; color: #CCC; text-align: center; width: 100%;"
+|- 
+| [http://mediawiki.org/wiki/TUT/1/Start?tour=tut1 <span style="color: #4740A8;">'''Mission 1'''</span>] 
+| [http://mediawiki.org/wiki/TUT/2/Start?tour=tut2 <span style="color: #4740A8;">'''Mission 2'''</span>]  
+| [http://mediawiki.org/wiki/TUT/3/Start?tour=tut3 <span style="color: #4740A8;">'''Mission 3'''</span>] 
+| [http://mediawiki.org/wiki/TUT/4/Start?tour=tut4 <span style="color: #4740A8;">'''Mission 4'''</span>] 
+|-
+| style="color: #000;" | Let's begin the journey
+| style="color: #000;" | Developing with ResourceLoader
+| style="color: #000;" | Strengths of the Action API
+| style="color: #000;" | Novelty of OOUI
+|}
