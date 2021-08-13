@@ -1,0 +1,18 @@
+{{:TUT/Background/3
+| challengeHeading = 
+<div style="text-align: center; font-size: 2em; margin-top: 2em;">'''Up for the challenge? '''[[File:Octicons-puzzle.svg|40px|link=]]</div>
+| message = 
+:<span style="font-size: 1.2em;">'''Which of the following seems correct regarding the ResourceLoader modules?'''</span>
+
+
+:'''(1)''' The modules '''mediawiki''' and '''jquery''' together form the base environment. However, these modules have to be requested from the server just like the other modules.
+:'''[[TUT/2/Question1/1|Select]]'''
+
+
+:'''(2)''' Since the modules '''mediawiki''' and '''jquery''' together form the base environment, they are always present and should not be requested. However, other modules have to be requested from the server.
+:'''[[TUT/2/Question1/2|Select]]'''
+
+
+:'''(3)''' Neither the base modules '''mediawiki''' and '''jquery''' nor the other modules are required to be requested. All of them are readily available.
+:'''[[TUT/2/Question1/3|Select]]'''
+}}

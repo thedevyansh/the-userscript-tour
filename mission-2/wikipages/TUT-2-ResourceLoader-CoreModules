@@ -1,0 +1,24 @@
+{{:TUT/Background/3
+| challengeHeading = 
+<div style="text-align: center; font-size: 2em; margin-top: 1em;">'''Some of the Core Modules'''</div>
+| message = 
+__NOTOC__
+== mediawiki ==
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; opacity: 0.8;">'''mw.config'''</span> The MediaWiki software exposes a number of configuration values in this object. Config values include wgServer, wgVersion, wgDBname, etc.<br><br>
+
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; opacity: 0.8; ">'''mw.loader.load'''</span> Load one or more modules, a script or a stylesheet.<br><br>
+
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; opacity: 0.8;">'''mw.loader.using'''</span> Load one or more modules, and execute a function once those modules are loaded.<br><br>
+'''and so on...'''
+
+
+== mediawiki.util ==
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; opacity: 0.8;">'''mw.util.addCSS'''</span> Adds a <style> element to the HEAD and returns the CSSStyleSheet object.<br><br>
+
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; opacity: 0.8; ">'''mw.util.addPortletLink'''</span> Facilitates the addition and customization of links in Portlet areas.<br><br>
+'''and so on...'''
+
+
+== jquery ==
+This is a base module that provides the functionality of jQuery. It simplifies cross-browser development and ships with all the properties, methods, and APIs that are provided by jQuery.
+}}

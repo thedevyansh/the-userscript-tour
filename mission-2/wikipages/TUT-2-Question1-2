@@ -1,0 +1,6 @@
+{{:TUT/Background/3
+| message = 
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<div>Hey, nice going!<br><br> That's the correct answer. As mentioned earlier, mediawiki and jquery cannnot be requested since they are already present! Various other modules such as '''mediawiki.util, mediawiki.Uri, oojs-ui-core''' etc. have to be loaded in order to use them.</div>
+[[File:TWA_fireworks_small.png|left|link=]]</div>
+}}

@@ -1,0 +1,12 @@
+{{:TUT/Background/4
+| message =<div style="text-align:center; margin:auto; padding: 0.2em 0em;"><span style="color: #4740A8; font-size: 1.3em;">'''WAY TO GO!'''</span><br />
+<div>{{:TUT/Badge/1}}</div><br />{{Clickable button 2|url=http://mediawiki.org/wiki/TUT/2/Start?tour=tut2|Go on to mission 2|class=mw-ui-progressive}}
+</div>
+| width =300px
+| fireworks =File:TWA fireworks1.png 
+| status = yes
+| mission1 = 1
+| mission2 = 
+| mission3 = 
+| mission4 = 
+}}

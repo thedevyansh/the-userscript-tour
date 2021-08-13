@@ -1,0 +1,16 @@
+{{:TUT/Background/3
+| message =
+<div>
+<p style="font-size: 2em; color: #4740A8; margin: 0em;">'''Invert the colour of the page'''</p><br>
+Userscript location:<br>
+<span style="background-color: #5190D1; color: #fff; padding: 0.3em 0.5em; border-radius: 0.8em;">'''<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js</nowiki>'''</span><br><br>
+<div style="display: flex; align-items: center;">
+[[File:Wikipedia user-script Invert.jpg|300px|link=]]
+<div style="margin-left: 2em;">
+This user script, present on '''English Wikipedia''', does the following:<br>
+'''1.''' Adds an '''Invert''' link to the top toolbar.<br>
+'''2.''' Allows to invert the page colour and the colour of images.
+</div>
+</div>
+</div>
+}}

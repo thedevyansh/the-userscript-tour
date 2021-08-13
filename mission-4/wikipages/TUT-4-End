@@ -1,0 +1,11 @@
+{{:TUT/Background/4
+| message =<div style="text-align:center; margin:auto; padding: 0.2em 0em;"><span style="color: #4740A8; font-size: 1.3em;">'''CONGRATULATIONS!'''</span><br /><br />
+<div>{{:TUT/Badge/4}}</div><br />
+</div>
+| width =300px
+| status = yes
+| mission1 = 1
+| mission2 = 1
+| mission3 = 1
+| mission4 = 1
+}}
