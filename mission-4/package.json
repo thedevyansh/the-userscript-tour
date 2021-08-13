@@ -1,7 +1,7 @@
 {
-  "name": "mission-3",
+  "name": "mission-4",
   "version": "1.0.0",
-  "description": "Mission 3 introduces users to the MediaWiki Action API and teaches them how to make API calls in userscripts.",
+  "description": "Mission 4 introduces users to OOUI and guides them to create interfaces in userscripts with the help of elements, widgets, dialogs, etc.",
   "main": "MediaWiki:Guidedtour-tour-tut3.js",
   "scripts": {
     "lint:fix": "eslint --fix --ext .js,.jsx ."
