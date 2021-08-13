@@ -390,7 +390,7 @@
 		.step( {
 			name: '11',
 			title: 'Let\'s load the user script',
-			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Copy and paste above:<br><b>mw.loader.load</b>( \'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<div align="right">[[File:TUT nurturing yourself.png|link=]]</div><br>There are many ways to load a user script depending on whether it is on the same wiki or the other.<br><br>We’ll use <code>mw.loader.load()</code> as it can load user script from other Wikimedia websites as well.<br><br>Copy and paste at the end of common.js:<br><b>mw.loader.load</b>( \'<nowiki>https://en.wikipedia.org/w/index.php?title=User:BrandonXLF/Invert.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -659,7 +659,7 @@
 		.step( {
 			name: '22',
 			title: 'Load the user script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Copy and paste above:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Do you remember which method would come handy here? Ofcourse you do :)<br><br><br>Copy and paste at the end:<br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/zoomThePage.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
@@ -731,7 +731,7 @@
 		.step( {
 			name: '25',
 			title: 'Mission 1 complete!',
-			description: '<br>This concludes <b>Mission 1:</b> Let\'s get started.<br><br>You\'re all set for your journey on <b>Mission 2:</b> Developing with ResourceLoader<br><br>',
+			description: '<br>This concludes <b>Mission 1.</b><br><br>You\'re all set for your journey on <b>Mission 2:</b> Developing with ResourceLoader<br><br>',
 			onShow: gt.parseDescription,
 			overlay: true,
 			closeOnClickOutside: false,

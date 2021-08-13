@@ -407,7 +407,7 @@
 			buttons: [ {
 				name: '<big>←</big>',
 				action: 'externalLink',
-				url: mw.util.getUrl( 'Special:MyPage/common.js' ) + '?tour=tut2&step=10'
+				url: mw.util.getUrl( 'TUT/2/Question1' ) + '?tour=tut2&step=11'
 			}, {
 				name: 'Hands-On',
 				type: 'progressive',

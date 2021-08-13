@@ -589,7 +589,7 @@
 		.step( {
 			name: '20',
 			title: 'Load the script',
-			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Copy and paste the following at the end of common.js:<br><br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
+			description: '<br><div align="left">[[File:TUT rocket.png|link=]]</div><br>Copy and paste at the bottom:<br><br><b>mw.loader.load</b>( \'<nowiki>https:' + mw.config.get( 'wgServer' ) + '/w/index.php?title=User:' + mw.config.get( 'wgUserName' ) + '/guessRandomNumber.js&action=raw&ctype=text/javascript</nowiki>\' );<br><br>',
 			onShow: gt.parseDescription,
 			attachTo: '.wikiEditor-ui-text',
 			position: 'bottomRight',
