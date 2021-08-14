@@ -1,23 +1,28 @@
 # The Userscript Tour
 Userscripts are the JavaScript programs that provide Wikimedia users the ability to customize and change the behavior of their user account. This project is a guided adventure tour on MediaWiki to give users insight on ***How to create a userscript on Wikimedia projects?***
 
+# Table of contents
+* [About the project](#about-the-project)
+* [How to run it locally?](#how-to-run-it-locally)
+* [License](#license)
+* [Special note](#special-note)
+
 # About the project
-**The Userscript Tour** facilitates users to learn about userscripts and how they are created using ResourceLoader, MediaWiki Action API, and Object-Oriented User Interface, in a consistent manner. The workflow is carried out using four missions:
-<br><br>
-### Mission 1 - Let's begin the journey
+The Userscript Tour facilitates users to learn about userscripts and how they are created using ResourceLoader, MediaWiki Action API, and Object-Oriented User Interface, in a consistent manner. The workflow is carried out using four missions:
+
+* **Mission 1 [Let's begin the journey]**<br>
 The users will gain practical knowledge of what userscripts/gadgets are and how the existing user scripts are loaded in common.js. They will be made to write a basic yet interesting userscript and import it in their common.js page.
-<br><br>
-### Mission 2 - Developing with ResourceLoader
+
+* **Mission 2 [Developing with ResourceLoader]**<br>
 In this mission, the users will gain practical knowledge of ResourceLoader and the useful core modules available. 
-<br><br>
-### Mission 3 - Strengths of the Action API:
+
+* **Mission 3 [Strengths of the Action API]**<br>
 In this mission, the users will gain practical knowledge of MediaWiki Action API, endpoints, modules, submodules, parameters, and API Sandbox.
-<br><br>
-### Mission 4 - Novelty of OOUI:
+
+* **Mission 4 [Novelty of OOUI]**<br>
 In the final mission, the users will gain practical knowledge of Object-Oriented User Interface (OOUI), OOUI elements, widgets, dialogs, etc.
 
 NOTE: The missions are constructed such that each one of them builds on its preceding missions in one or the other way.
-<br>
 
 ![Landing interface](/demos/1.png)
 <br>
@@ -27,9 +32,10 @@ NOTE: The missions are constructed such that each one of them builds on its prec
 
 ![Quick Changelog userscript](/demos/3.png)
 
-#### Code Example: Create a guider
+**Code Example: Create a guider**
+ 
 ```javascript
-tour.step({
+tour.step( {
 		name: '3',
 		title: 'Put title here',
 		description: 'Put description here',
@@ -46,18 +52,19 @@ tour.step({
 		} ],
 		allowAutomaticOkay: false
 
-	})
-	.next('4');
+	} )
+	.next( '4' );
 ```
-This would have similar result as following:
+This would have result similar to following:
 
 ![A Mission 2 guider](/demos/4.png)
 
-#### Advantage of The Userscript Tour
+**Advantage of The Userscript Tour**<br>
+
 The project primarily focuses on newbie developers and existing Wikimedia community members who have a little bit JavaScript knowledge. If someone does outreach then every participant should go in one and the same flow.
 
 # How to run it locally?
-### Prerequisites:
+**Prerequisites:**
 * [MediaWiki](https://www.mediawiki.org/wiki/Manual:Installation_guide)
 * Following extensions:
   * [EventLogging](https://www.mediawiki.org/wiki/Extension:EventLogging)
@@ -77,8 +84,7 @@ For MediaWiki installation, I have used the [MediaWiki-Docker](https://www.media
 	* MediaWiki:Guidedtour-tour-tut2.js
 	* MediaWiki:Guidedtour-tour-tut3.js
 	* MediaWiki:Guidedtour-tour-tut4.js
-4. Navigate to **wiki/The_Userscript_Tour** on your local MediaWiki.
-<br>
+4. Navigate to `/The_Userscript_Tour` on your local MediaWiki.
 
 LIMITATIONS: 
 * This tour only uses the Source Editor. If you use the Visual Editor or have it enabled it won't work yet.
@@ -86,9 +92,9 @@ LIMITATIONS:
 * The tour is not supported on tablets and smaller mobile devices.
 
 # License
-Distributed under the GPL v3 License. See `LICENSE` for more information.
+Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
-# Special Note
+# Special note
 <div align="center"><img src="/demos/5.png" width="500" align="center" /></div>
 <br>
 This project is created as part of Google Summer of Code 2021 with my mentoring organisation being Wikimedia Foundation. I'm hopeful that this project would be deployed on mediawiki.org. Once done, I'll update this section.
