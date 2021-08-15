@@ -10,16 +10,16 @@ Userscripts are the JavaScript programs that provide Wikimedia users the ability
 # About the project
 The Userscript Tour facilitates users to learn about userscripts and how they are created using ResourceLoader, MediaWiki Action API, and Object-Oriented User Interface, in a consistent manner. The workflow is carried out using four missions:
 
-* **Mission 1 [Let's begin the journey]**<br>
+* **Mission 1 [ Let's begin the journey ]**<br>
 The users will gain practical knowledge of what userscripts/gadgets are and how the existing user scripts are loaded in common.js. They will be made to write a basic yet interesting userscript and import it in their common.js page.
 
-* **Mission 2 [Developing with ResourceLoader]**<br>
+* **Mission 2 [ Developing with ResourceLoader ]**<br>
 In this mission, the users will gain practical knowledge of ResourceLoader and the useful core modules available. 
 
-* **Mission 3 [Strengths of the Action API]**<br>
+* **Mission 3 [ Strengths of the Action API ]**<br>
 In this mission, the users will gain practical knowledge of MediaWiki Action API, endpoints, modules, submodules, parameters, and API Sandbox.
 
-* **Mission 4 [Novelty of OOUI]**<br>
+* **Mission 4 [ Novelty of OOUI ]**<br>
 In the final mission, the users will gain practical knowledge of Object-Oriented User Interface (OOUI), OOUI elements, widgets, dialogs, etc.
 
 NOTE: The missions are constructed such that each one of them builds on its preceding missions in one or the other way.
@@ -65,26 +65,28 @@ The project primarily focuses on newbie developers and existing Wikimedia commun
 
 # How to run it locally?
 **Prerequisites:**
-* [MediaWiki](https://www.mediawiki.org/wiki/Manual:Installation_guide)
+* [MediaWiki](https://www.mediawiki.org/wiki/Manual:Installation_guide) (>= 1.35.0)
 * Following extensions:
+  * [EventBus](https://www.mediawiki.org/wiki/Extension:EventBus)
   * [EventLogging](https://www.mediawiki.org/wiki/Extension:EventLogging)
   * [EventStreamConfig](https://www.mediawiki.org/wiki/Extension:EventStreamConfig)
-  * [EventBus](https://www.mediawiki.org/wiki/Extension:EventBus)
   * [GuidedTour](https://www.mediawiki.org/wiki/Extension:GuidedTour)
   * [ParserFunctions](https://www.mediawiki.org/wiki/Extension:ParserFunctions)
   * [Scribunto](https://www.mediawiki.org/wiki/Extension:Scribunto)
   * [TemplateStyles](https://www.mediawiki.org/wiki/Extension:TemplateStyles)
 
-For MediaWiki installation, I have used the [MediaWiki-Docker](https://www.mediawiki.org/wiki/MediaWiki-Docker) for setting up my development environment.
+I used the [MediaWiki-Docker](https://www.mediawiki.org/wiki/MediaWiki-Docker) for setting up my development environment.
 
-1. Create the templates present in `Templates` directory and wikipages present in respective directories - `mission-1`, `mission-2`, `mission-3` and `mission-4`.
-2. The naming of templates and wikipages should follow the convention: Replace the `-` (hyphen) delimiter with `/` (slash). For example, the name of the template **TUT-Background-1** should be **TUT/Background/1** on your local installation of MediaWiki.
-3. Find the tour scripts in directories of respective missions above and create the following pages in the MediaWiki namespace:
+1. Enable JavaScript on your local MediaWiki by appending `$wgAllowUserJs = true;` to your LocalSettings.php.
+2. Create the templates present in `Templates` directory and the wikipages present in respective directories - `mission-1`, `mission-2`, `mission-3` and `mission-4`.
+3. The naming of templates and wikipages should follow the convention: Replace the `-` (hyphen) delimiter with `/` (slash). For example, the name of the template **TUT-Background-1** should be **TUT/Background/1** on your local installation of MediaWiki.
+4. The media files used in the guided tour are uploaded on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page). You can download them first and upload them on your local  installation.
+5. Find the tour scripts in directories of respective missions above and create the following pages in the MediaWiki namespace:
 	* MediaWiki:Guidedtour-tour-tut1.js
 	* MediaWiki:Guidedtour-tour-tut2.js
 	* MediaWiki:Guidedtour-tour-tut3.js
 	* MediaWiki:Guidedtour-tour-tut4.js
-4. Navigate to `/The_Userscript_Tour` on your local MediaWiki.
+6. Navigate to `/The_Userscript_Tour` on your MediaWiki.
 
 LIMITATIONS: 
 * This tour only uses the Source Editor. If you use the Visual Editor or have it enabled it won't work yet.
@@ -95,7 +97,7 @@ LIMITATIONS:
 Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
 # Special note
-<div align="center"><img src="/demos/5.png" width="500" align="center" /></div>
+![GSoC with WMF](/demos/5.png)
 <br>
-This project is created as part of Google Summer of Code 2021 with my mentoring organisation being Wikimedia Foundation. It would be deployed on mediawiki.org. Once done, I'll update this section.
+This project is created as part of Google Summer of Code 2021 with my mentoring organisation being **Wikimedia Foundation.** It would be deployed on [mediawiki.org](https://www.mediawiki.org/wiki/MediaWiki). Once done, I'll update the section.
 
