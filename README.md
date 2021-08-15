@@ -43,11 +43,11 @@ tour.step( {
 		overlay: false,
 		closeOnClickOutside: false,
 		buttons: [ {
-			name: '<big>←</big>',
+			name: 'Button 1',
 			action: 'externalLink',
 			url: mw.util.getUrl( 'TUT/1/Start' ) + '?tour=tut1&step=2'
 		}, {
-			name: 'And gadgets?',
+			name: 'Button 2',
 			action: 'next',
 		} ],
 		allowAutomaticOkay: false
@@ -97,5 +97,5 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 # Special note
 <div align="center"><img src="/demos/5.png" width="500" align="center" /></div>
 <br>
-This project is created as part of Google Summer of Code 2021 with my mentoring organisation being Wikimedia Foundation. I'm hopeful that this project would be deployed on mediawiki.org. Once done, I'll update this section.
+This project is created as part of Google Summer of Code 2021 with my mentoring organisation being Wikimedia Foundation. It would be deployed on mediawiki.org. Once done, I'll update this section.
 
