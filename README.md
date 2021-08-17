@@ -4,6 +4,8 @@ Userscripts are the JavaScript programs that provide Wikimedia users the ability
 # Table of contents
 * [About the project](#about-the-project)
 * [How to run it locally?](#how-to-run-it-locally)
+* [Bug report](#bug-report)
+* [Feature request](#feature-request)
 * [License](#license)
 * [Special note](#special-note)
 
@@ -93,6 +95,12 @@ LIMITATIONS:
 * This tour only uses the Source Editor. If you use the Visual Editor or have it enabled it won't work yet.
 * You need JavaScript enabled for the tour to work properly.
 * The tour is not supported on tablets and smaller mobile devices.
+
+# Bug report
+Feel free to [open an issue](https://github.com/thedevyansh/the-userscript-tour/issues) if you find any bug.
+
+# Feature request
+Feel free to [open an issue](https://github.com/thedevyansh/the-userscript-tour/issues) to request any additional features you might need for your use case.
 
 # License
 Distributed under the GPL-3.0 License. See `LICENSE` for more information.
