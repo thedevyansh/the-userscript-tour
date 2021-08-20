@@ -34,13 +34,18 @@ In the final mission, the users will gain practical knowledge of Object-Oriented
 
 NOTE: The missions are constructed such that each one of them builds on the concepts introduced in the preceding missions.
 
+**Some glimpses of The Userscript Tour:**
+
 ![Landing interface](/demos/1.png)
 <br>
 
-![Mission 1 ends](/demos/2.png)
+![Mission 1 starts](/demos/2.png)
 <br>
 
-![Quick Changelog userscript](/demos/3.png)
+![Mission 1 ends](/demos/3.png)
+<br>
+
+![Quick Changelog userscript](/demos/4.png)
 
 **Code Example: Create a guider**
  
@@ -50,7 +55,7 @@ tour.step( {
 		title: 'Put title here',
 		description: 'Put description here',
 		onShow: gt.parseDescription,
-		overlay: false,
+		overlay: true,
 		closeOnClickOutside: false,
 		buttons: [ {
 			name: 'Button 1',
@@ -67,7 +72,7 @@ tour.step( {
 ```
 This would have a result similar to the following:
 
-![A Mission 2 guider](/demos/4.png)
+![A Mission 2 guider](/demos/5.png)
 
 **Benefit of The Userscript Tour**<br>
 
@@ -119,4 +124,4 @@ All of my blog posts related to the project can be found [here](https://thedevya
 # Special note
 This project is created as part of Google Summer of Code 2021 with my mentoring organization being **Wikimedia Foundation.** Once deployed on [mediawiki.org](https://www.mediawiki.org/wiki/MediaWiki), I'll update the deployed link in the repository.
 
-<p align="center"><img src="/demos/5.png"></p>
+<p align="center"><img src="/demos/6.png"></p>
