@@ -14,6 +14,7 @@ Userscripts are the JavaScript programs that provide Wikimedia users the ability
 * [Bug report](#bug-report)
 * [Feature request](#feature-request)
 * [License](#license)
+* [Blog posts](#blog-posts)
 * [Special note](#special-note)
 
 # About the project
