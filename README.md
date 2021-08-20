@@ -1,3 +1,10 @@
+# Google Summer of Code 2021 Final Work Product
+
+| **Student** | Devyansh Chawla |
+| --- | --- |
+| **Organisation**  | [Wikimedia Foundation](https://wikimediafoundation.org/)  |
+| **Project** | [Develop a Userscript/Gadget tutorial on mediaWiki.org](https://summerofcode.withgoogle.com/projects/#5542469837520896) |   
+
 # The Userscript Tour
 Userscripts are the JavaScript programs that provide Wikimedia users the ability to customize and change the behavior of their user accounts. This project is a guided adventure tour on `mediawiki.org` to give users insight on ***How to create a userscript on Wikimedia projects?***
 
@@ -104,6 +111,9 @@ Feel free to [open an issue](https://github.com/thedevyansh/the-userscript-tour/
 
 # License
 Distributed under the GPL-3.0 License. See `LICENSE` for more information.
+
+# Blog posts
+All of my blog posts related to the project can be found [here](https://thedevyansh.github.io/google-summer-of-code-2021/).
 
 # Special note
 This project is created as part of Google Summer of Code 2021 with my mentoring organization being **Wikimedia Foundation.** Once deployed on [mediawiki.org](https://www.mediawiki.org/wiki/MediaWiki), I'll update the deployed link in the repository.
