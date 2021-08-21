@@ -18,34 +18,58 @@ Userscripts are the JavaScript programs that provide Wikimedia users the ability
 * [Special note](#special-note)
 
 # About the project
+
 The Userscript Tour facilitates users to learn about userscripts and how they are created using ResourceLoader, MediaWiki Action API, and Object-Oriented User Interface, consistently. The workflow is carried out using four missions:
 
-* **Mission 1 (Let's begin the journey)**<br>
-The users will gain practical knowledge of what userscripts/gadgets are and how the existing user scripts are loaded in common.js. They will be made to write a basic yet interesting userscript and import it into their common.js page.
+<p align="center"><img src="/demos/f1.png" alt="Landing page of The Userscript Tour" width="550"></p>
 
-* **Mission 2 (Developing with ResourceLoader)**<br>
-In this mission, the users will gain practical knowledge of ResourceLoader and the useful core modules available. 
+**Mission 1 (Let's begin the journey)**<br>
+The users will gain practical knowledge of what userscripts/gadgets are and how the existing userscripts are loaded in common.js. They will be made to write a basic yet interesting userscript and import it into their common.js page.
 
-* **Mission 3 (Strengths of the Action API)**<br>
+**Userscripts involved:**
+
+- **Invert.js:** Adds an Invert link to the top toolbar. It allows inverting the page color and the color of images.
+
+- **zoom.js:** Adds two buttons (to zoom-in and zoom-out) on the right of the page heading.
+
+<p align="center"><img src="/demos/f2.png" alt="Mission 1 starts" width="550"></p>
+
+**Mission 2 (Developing with ResourceLoader)**<br>
+In this mission, the users will gain practical knowledge of ResourceLoader and the core modules available.
+
+**Userscripts involved:**
+
+- **toggleFontColor.js:** Adds a link to the p-personal portlet area, which when clicked toggles the font color of the content. It is created to depict the use of mediawiki.util module.
+
+- **userEditCount.js:** Shows the count of edits made by the logged-in user on the current wiki beside the username.
+
+<p align="center"><img src="/demos/f3.png" alt="Mission 2 starts" width="550"></p>
+
+**Mission 3 (Strengths of the Action API)**<br>
 In this mission, the users will gain practical knowledge of MediaWiki Action API, endpoints, modules, submodules, parameters, and API Sandbox.
 
-* **Mission 4 (Novelty of OOUI)**<br>
+**Userscripts involved:**
+
+- **basicPageInfo.js:** Shows the basic information about the current page (number of bytes/characters) at the top of the content area. This userscript is written to help users get started with making API calls to the Wikimedia servers.
+
+- **quickChangeLog.js:** Adds a link to the Toolbox portlet area, that when clicked shows the 25 most recent changes on MediaWiki in the form of a jQuery dialog box.
+
+<p align="center"><img src="/demos/f4.png" alt="Mission 3 starts" width="550"></p>
+
+**Mission 4 (Novelty of OOUI)**<br>
 In the final mission, the users will gain practical knowledge of Object-Oriented User Interface (OOUI), OOUI elements, widgets, dialogs, custom user interface, etc.
 
+**Userscripts involved:**
+
+- **showAlertBox.js:** Appends an OOUI button to the portlet area that when clicked, shows an OOUI Message Dialog (a simple alert box).
+
+- **guessRandomNumber.js:** One of the cool userscripts which makes use of custom widgets. It prepends a tiny random game at the top of the wiki page. The OOUI widgets used are: MessageWidget, LabelWidget, TextInputWidget, ButtonWidget and Simple Message Dialog Box.
+
+<p align="center"><img src="/demos/f5.png" alt="Mission 4 starts" width="550"></p>
+
+<p align="center"><img src="/demos/f6.png" alt="Mission 4 ends" width="550"></p>
+
 NOTE: The missions are constructed such that each one of them builds on the concepts introduced in the preceding missions.
-
-**Some glimpses of The Userscript Tour:**
-
-![Landing interface](/demos/1.png)
-<br>
-
-![Mission 1 starts](/demos/2.png)
-<br>
-
-![Mission 1 ends](/demos/3.png)
-<br>
-
-![Quick Changelog userscript](/demos/4.png)
 
 **Code Example: Create a guider**
  
@@ -70,9 +94,6 @@ tour.step( {
 	} )
 	.next( '4' );
 ```
-This would have a result similar to the following:
-
-![A Mission 2 guider](/demos/5.png)
 
 **Benefit of The Userscript Tour**<br>
 
@@ -124,4 +145,4 @@ All of my blog posts related to the project can be found [here](https://thedevya
 # Special note
 This project is created as part of Google Summer of Code 2021 with my mentoring organization being **Wikimedia Foundation.** Once deployed on [mediawiki.org](https://www.mediawiki.org/wiki/MediaWiki), I'll update the deployed link in the repository.
 
-<p align="center"><img src="/demos/6.png"></p>
+<p align="center"><img src="/demos/f7.png" alt="GSoC with WMF"></p>
