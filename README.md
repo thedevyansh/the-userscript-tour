@@ -71,6 +71,20 @@ In the final mission, the users will gain practical knowledge of Object-Oriented
 
 NOTE: The missions are constructed such that each one of them builds on the concepts introduced in the preceding missions.
 
+**Other highlights**
+
+- A welcome message is sent to the Talk page when the user initiates The Userscript Tour (Mission 1).
+
+<p align="center"><img src="/demos/f7.png" alt="Welcome message on Talk page" width="550"></p>
+
+- For further engagement, the user is awarded badges for small accomplishments; for example, a badge for loading the first userscript, another badge for completing a Mission, etc.
+
+<p align="center"><img src="/demos/f8.png" alt="A badge awarded in Mission 1" width="550"></p>
+
+- The badges are sent to a subpage of the user. The user consent is taken before writing anything to the pages of the User namespace.
+
+<p align="center"><img src="/demos/f9.png" alt="All badges awarded in The Userscript Tour" width="550"></p>
+
 **Code Example: Create a guider**
  
 ```javascript
@@ -94,20 +108,6 @@ tour.step( {
 	} )
 	.next( '4' );
 ```
-
-**Other highlights**
-
-- A welcome message is sent to the Talk page when the user initiates The Userscript Tour (Mission 1).
-
-<p align="center"><img src="/demos/f7.png" alt="Welcome message on Talk page" width="550"></p>
-
-- For further engagement, the user is awarded badges for small accomplishments; for example, a badge for loading the first userscript, another badge for completing a Mission, etc.
-
-<p align="center"><img src="/demos/f8.png" alt="A badge awarded in Mission 1" width="550"></p>
-
-- The badges are sent to a subpage of the user. The user consent is taken before writing anything to the pages of the User namespace.
-
-<p align="center"><img src="/demos/f9.png" alt="All badges awarded in The Userscript Tour" width="550"></p>
 
 **Benefit of The Userscript Tour**<br>
 
