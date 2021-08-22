@@ -95,6 +95,20 @@ tour.step( {
 	.next( '4' );
 ```
 
+**Other highlights**
+
+- A welcome message is sent to the Talk page when the user initiates The Userscript Tour (Mission 1).
+
+<p align="center"><img src="/demos/f7.png" alt="Welcome message on Talk page" width="550"></p>
+
+- For further engagement, the user is awarded badges for small accomplishments; for example, a badge for loading the first userscript, another badge for completing a Mission, etc.
+
+<p align="center"><img src="/demos/f8.png" alt="A badge awarded in Mission 1" width="550"></p>
+
+- The badges are sent to a subpage of the user. The user consent is taken before writing anything to the pages of the User namespace.
+
+<p align="center"><img src="/demos/f9.png" alt="All badges awarded in The Userscript Tour" width="550"></p>
+
 **Benefit of The Userscript Tour**<br>
 
 The project primarily focuses on newbie developers and existing Wikimedia community members who have a little bit of JavaScript knowledge. If someone does outreach then every participant would go in the same flow.
@@ -145,4 +159,4 @@ All of my blog posts related to the project can be found [here](https://thedevya
 # Special note
 This project is created as part of Google Summer of Code 2021 with my mentoring organization being **Wikimedia Foundation.** Once deployed on [mediawiki.org](https://www.mediawiki.org/wiki/MediaWiki), I'll update the deployed link in the repository.
 
-<p align="center"><img src="/demos/f7.png" alt="GSoC with WMF"></p>
+<p align="center"><img src="/demos/f10.png" alt="GSoC with WMF"></p>
